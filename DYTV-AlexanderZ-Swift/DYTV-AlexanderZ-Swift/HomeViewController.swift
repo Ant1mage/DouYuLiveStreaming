@@ -8,8 +8,21 @@
 
 import UIKit
 
+private let kTitleViewH : CGFloat = 40
+
 class HomeViewController: UIViewController {
 
+    
+    // 懒加载属性
+    private lazy var pageTitleView:PageTitleView = {
+        
+        let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
+        let titles = ["推荐","游戏","娱乐","趣玩"]
+        let titleView = PageTitleView(frame: titleFrame, title: titles)
+//        titleView.backgroundColor = UIColor.blueColor()
+        return titleView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +35,13 @@ extension HomeViewController {
     
     private func setupUI() {
         
+        // 不需要调整内边距
+        automaticallyAdjustsScrollViewInsets = false
+        
         setNavBar()
+        
+        // 添加TitleView
+        view.addSubview(pageTitleView)
         
     }
     
