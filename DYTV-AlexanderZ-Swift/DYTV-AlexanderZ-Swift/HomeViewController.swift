@@ -63,7 +63,7 @@ extension HomeViewController {
         // 添加子控件
         view.addSubview(pageTitleView)
         view.addSubview(pageConteneView)
-//        pageConteneView.backgroundColor = UIColor.blueColor()
+        pageConteneView.backgroundColor = UIColor.blueColor()
         
     }
     

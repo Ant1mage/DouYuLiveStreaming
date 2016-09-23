@@ -30,7 +30,8 @@ class PageContentView: UIView {
        collectionView.showsHorizontalScrollIndicator = false
        collectionView.pagingEnabled = true
        collectionView.bounces = false
-       collectionView.registerClass(UICollectionView.self, forCellWithReuseIdentifier: contentCellID)
+       collectionView.dataSource = self
+       collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: contentCellID)
         
        return collectionView
     }()
@@ -42,6 +43,9 @@ class PageContentView: UIView {
         self.parentViewController = parentViewController
         
         super.init(frame:frame)
+        
+        //设置UI
+        setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,7 +54,7 @@ class PageContentView: UIView {
 
 }
 
-// 设置界面
+// 设置UI界面
 extension PageContentView {
     
     private func setupUI() {
@@ -61,7 +65,7 @@ extension PageContentView {
         
         // 2.添加UICollectionView,用于Cell中存放控制器的View
         addSubview(collectionView)
-        collectionView.bounds = bounds
+        collectionView.frame = bounds
         
     }
     
