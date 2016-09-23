@@ -19,6 +19,7 @@
 		324D7E2D1D95353C000087EC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E2C1D95353C000087EC /* Common.swift */; };
 		324D7E2F1D953E17000087EC /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E2E1D953E17000087EC /* PageTitleView.swift */; };
 		324D7E311D95409A000087EC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E301D95409A000087EC /* UIColor+Extension.swift */; };
+		324D7E331D95A430000087EC /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E321D95A430000087EC /* PageContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		324D7E2C1D95353C000087EC /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		324D7E2E1D953E17000087EC /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		324D7E301D95409A000087EC /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		324D7E321D95A430000087EC /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				324D7E2E1D953E17000087EC /* PageTitleView.swift */,
+				324D7E321D95A430000087EC /* PageContentView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			files = (
 				324D7E2D1D95353C000087EC /* Common.swift in Sources */,
 				324D7DF51D95230D000087EC /* AppDelegate.swift in Sources */,
+				324D7E331D95A430000087EC /* PageContentView.swift in Sources */,
 				324D7E131D95264B000087EC /* MainViewController.swift in Sources */,
 				324D7E261D95285C000087EC /* FollowViewController.swift in Sources */,
 				324D7E2B1D952E9F000087EC /* UIBarButtonItem+Extension.swift in Sources */,
