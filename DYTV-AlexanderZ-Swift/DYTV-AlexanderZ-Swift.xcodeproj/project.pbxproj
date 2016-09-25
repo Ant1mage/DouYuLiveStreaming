@@ -20,6 +20,13 @@
 		324D7E2F1D953E17000087EC /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E2E1D953E17000087EC /* PageTitleView.swift */; };
 		324D7E311D95409A000087EC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E301D95409A000087EC /* UIColor+Extension.swift */; };
 		324D7E331D95A430000087EC /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E321D95A430000087EC /* PageContentView.swift */; };
+		324D7E371D98608F000087EC /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E361D98608F000087EC /* RecommendViewController.swift */; };
+		324D7E3A1D986905000087EC /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E381D986905000087EC /* CollectionHeaderView.swift */; };
+		324D7E3B1D986905000087EC /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324D7E391D986905000087EC /* CollectionHeaderView.xib */; };
+		324D7E3E1D9870D7000087EC /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E3C1D9870D7000087EC /* CollectionNormalCell.swift */; };
+		324D7E3F1D9870D7000087EC /* CollectionNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324D7E3D1D9870D7000087EC /* CollectionNormalCell.xib */; };
+		324D7E481D987C1B000087EC /* CollectionPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E461D987C1B000087EC /* CollectionPrettyCell.swift */; };
+		324D7E491D987C1B000087EC /* CollectionPrettyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324D7E471D987C1B000087EC /* CollectionPrettyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		324D7E2E1D953E17000087EC /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		324D7E301D95409A000087EC /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		324D7E321D95A430000087EC /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		324D7E361D98608F000087EC /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		324D7E381D986905000087EC /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		324D7E391D986905000087EC /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
+		324D7E3C1D9870D7000087EC /* CollectionNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
+		324D7E3D1D9870D7000087EC /* CollectionNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionNormalCell.xib; sourceTree = "<group>"; };
+		324D7E461D987C1B000087EC /* CollectionPrettyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPrettyCell.swift; sourceTree = "<group>"; };
+		324D7E471D987C1B000087EC /* CollectionPrettyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionPrettyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +178,10 @@
 			children = (
 				324D7E2E1D953E17000087EC /* PageTitleView.swift */,
 				324D7E321D95A430000087EC /* PageContentView.swift */,
+				324D7E3C1D9870D7000087EC /* CollectionNormalCell.swift */,
+				324D7E3D1D9870D7000087EC /* CollectionNormalCell.xib */,
+				324D7E461D987C1B000087EC /* CollectionPrettyCell.swift */,
+				324D7E471D987C1B000087EC /* CollectionPrettyCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -186,6 +204,8 @@
 		324D7E151D9527F0000087EC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				324D7E381D986905000087EC /* CollectionHeaderView.swift */,
+				324D7E391D986905000087EC /* CollectionHeaderView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -194,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				324D7E211D952848000087EC /* HomeViewController.swift */,
+				324D7E361D98608F000087EC /* RecommendViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -340,6 +361,9 @@
 			files = (
 				324D7E071D9523F4000087EC /* Images.xcassets in Resources */,
 				324D7DFF1D95230D000087EC /* LaunchScreen.storyboard in Resources */,
+				324D7E491D987C1B000087EC /* CollectionPrettyCell.xib in Resources */,
+				324D7E3F1D9870D7000087EC /* CollectionNormalCell.xib in Resources */,
+				324D7E3B1D986905000087EC /* CollectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,9 +377,13 @@
 				324D7E2D1D95353C000087EC /* Common.swift in Sources */,
 				324D7DF51D95230D000087EC /* AppDelegate.swift in Sources */,
 				324D7E331D95A430000087EC /* PageContentView.swift in Sources */,
+				324D7E481D987C1B000087EC /* CollectionPrettyCell.swift in Sources */,
 				324D7E131D95264B000087EC /* MainViewController.swift in Sources */,
 				324D7E261D95285C000087EC /* FollowViewController.swift in Sources */,
+				324D7E371D98608F000087EC /* RecommendViewController.swift in Sources */,
 				324D7E2B1D952E9F000087EC /* UIBarButtonItem+Extension.swift in Sources */,
+				324D7E3A1D986905000087EC /* CollectionHeaderView.swift in Sources */,
+				324D7E3E1D9870D7000087EC /* CollectionNormalCell.swift in Sources */,
 				324D7E241D952852000087EC /* LiveViewController.swift in Sources */,
 				324D7E2F1D953E17000087EC /* PageTitleView.swift in Sources */,
 				324D7E221D952848000087EC /* HomeViewController.swift in Sources */,

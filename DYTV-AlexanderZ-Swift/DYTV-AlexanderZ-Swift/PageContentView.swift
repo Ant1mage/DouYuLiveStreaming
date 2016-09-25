@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol PageContentViewDelegate : class {
+    func pageContentView(contentView : PageContentView, progress : CGFloat, sourceIndex : Int, targetIndex : Int)
+}
 
 private let contentCellID = "contentCellID"
 
@@ -17,6 +20,9 @@ class PageContentView: UIView {
     // 定义属性
     private var childVcs : [UIViewController]
     private weak var parentViewController : UIViewController?
+    private var startOffsetX : CGFloat = 0
+    weak var delegate : PageContentViewDelegate?
+    private var isForbidScrollDelegate : Bool = false
     
     // 懒加载属性
     private lazy var collectionView : UICollectionView = {[weak self] in
@@ -34,7 +40,7 @@ class PageContentView: UIView {
        collectionView.bounces = false
        collectionView.scrollsToTop = false
        collectionView.dataSource = self
-//       collectionView.delegate = self
+       collectionView.delegate = self
        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: contentCellID)
         
        return collectionView
@@ -98,10 +104,68 @@ extension PageContentView : UICollectionViewDataSource {
     }
 }
 
+// 遵守UICollectionViewDelegate
+extension PageContentView : UICollectionViewDelegate {
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        
+        isForbidScrollDelegate = false
+        
+        startOffsetX = scrollView.contentOffset.x
+    }
+    
+    func scrollViewDidScroll(scrollView : UIScrollView){
+        
+        if isForbidScrollDelegate { return }
+        
+        var progress : CGFloat = 0
+        var sourceIndex : Int = 0
+        var targetIndex : Int = 0
+        
+        // 1.判断左滑动还是右华东
+        let currentOffsetX = scrollView.contentOffset.x
+        let scrollViewW = scrollView.bounds.width
+        if currentOffsetX > startOffsetX {
+            // 左滑动
+            progress = currentOffsetX / scrollViewW - floor( currentOffsetX / scrollViewW )
+            sourceIndex = Int(currentOffsetX / scrollViewW)
+            targetIndex = sourceIndex + 1
+            
+            // 判断targetIndex是否越界
+            if targetIndex >= childVcs.count {
+                targetIndex = childVcs.count - 1
+            }
+            
+            // 如果完全滑过去
+            if currentOffsetX - startOffsetX == scrollViewW {
+                progress = 1
+                targetIndex = sourceIndex
+            }
+            
+        }else {
+            // 右滑动
+            progress = 1 - (currentOffsetX / scrollViewW - floor( currentOffsetX / scrollViewW ))
+            targetIndex = Int(currentOffsetX / scrollViewW)
+            sourceIndex = targetIndex + 1
+            if sourceIndex >= childVcs.count {
+                sourceIndex = childVcs.count - 1
+            }
+        }
+        
+        // 2.将3个数据传给titleView
+        print("pro:\(progress),souce:\(sourceIndex),tar:\(targetIndex)")
+        delegate?.pageContentView(self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+    
+    
+}
+
 // 与pageTitleView的逻辑处理
 extension PageContentView {
     
     func setCurrentIndex(currentIndex : Int) {
+        
+        isForbidScrollDelegate = true
         
         let offsetX = CGFloat (currentIndex) * collectionView.frame.width
         collectionView.setContentOffset(CGPoint(x:offsetX,y:0), animated: true)
