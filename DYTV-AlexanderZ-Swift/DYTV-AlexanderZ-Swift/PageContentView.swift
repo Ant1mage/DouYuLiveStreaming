@@ -8,19 +8,21 @@
 
 import UIKit
 
+
 private let contentCellID = "contentCellID"
+
 
 class PageContentView: UIView {
     
     // 定义属性
     private var childVcs : [UIViewController]
-    private var parentViewController : UIViewController?
+    private weak var parentViewController : UIViewController?
     
     // 懒加载属性
-    private lazy var collectionView : UICollectionView = {
+    private lazy var collectionView : UICollectionView = {[weak self] in
        // 1.创建layout
        let layout = UICollectionViewFlowLayout()
-       layout.itemSize = self.bounds.size
+       layout.itemSize = (self?.bounds.size)!
        layout.minimumLineSpacing = 0
        layout.minimumInteritemSpacing = 0
        layout.scrollDirection = .Horizontal
@@ -30,14 +32,16 @@ class PageContentView: UIView {
        collectionView.showsHorizontalScrollIndicator = false
        collectionView.pagingEnabled = true
        collectionView.bounces = false
+       collectionView.scrollsToTop = false
        collectionView.dataSource = self
+//       collectionView.delegate = self
        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: contentCellID)
         
        return collectionView
     }()
     
     
-    init(frame: CGRect, childVcs : [UIViewController], parentViewController : UIViewController) {
+    init(frame: CGRect, childVcs : [UIViewController], parentViewController : UIViewController?) {
         
         self.childVcs = childVcs
         self.parentViewController = parentViewController
@@ -60,7 +64,7 @@ extension PageContentView {
     private func setupUI() {
         // 1.将所有子控制器添加到父控制器
         for childVC in childVcs {
-            parentViewController!.addChildViewController(childVC)
+            parentViewController?.addChildViewController(childVC)
         }
         
         // 2.添加UICollectionView,用于Cell中存放控制器的View
@@ -68,8 +72,6 @@ extension PageContentView {
         collectionView.frame = bounds
         
     }
-    
-    
 }
 
 
@@ -93,5 +95,15 @@ extension PageContentView : UICollectionViewDataSource {
         cell.contentView.addSubview(childVc.view)
         
         return cell
+    }
+}
+
+// 与pageTitleView的逻辑处理
+extension PageContentView {
+    
+    func setCurrentIndex(currentIndex : Int) {
+        
+        let offsetX = CGFloat (currentIndex) * collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x:offsetX,y:0), animated: true)
     }
 }

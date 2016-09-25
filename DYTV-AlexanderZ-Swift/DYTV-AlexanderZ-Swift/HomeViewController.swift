@@ -14,16 +14,17 @@ class HomeViewController: UIViewController {
 
     
     // 懒加载属性
-    private lazy var pageTitleView : PageTitleView = {
+    private lazy var pageTitleView : PageTitleView = {[weak self] in
         
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, title: titles)
 //        titleView.backgroundColor = UIColor.blueColor()
+        titleView.delegate = self
         return titleView
     }()
     
-    private lazy var pageConteneView : PageContentView = {
+    private lazy var pageConteneView : PageContentView = {[weak self] in
         
         // 1.确定View的frame
         let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH
@@ -45,12 +46,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
     }
 
 }
 
+//设置UI界面
 extension HomeViewController {
     
     private func setupUI() {
@@ -82,6 +84,13 @@ extension HomeViewController {
         
     }
     
+}
+
+//遵守PageTitleViewDelegate
+extension HomeViewController : PageTitleViewDelegate {
     
-    
+    func pageTitleView(titleView: PageTitleView, selectedIndex: Int) {
+//        print(index)
+        pageConteneView.setCurrentIndex(selectedIndex)
+    }
 }
