@@ -51,6 +51,10 @@
                 <constraint firstAttribute="trailing" secondItem="k8Q-TY-HkH" secondAttribute="trailing" constant="10" id="uty-Hy-xRb"/>
                 <constraint firstItem="p1w-78-TgY" firstAttribute="centerY" secondItem="9Jv-c8-rUj" secondAttribute="centerY" id="z2d-Ld-rDb"/>
             </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="9Jv-c8-rUj" id="w2I-Mj-KIm"/>
+                <outlet property="titleLabel" destination="p1w-78-TgY" id="lSR-Se-wSZ"/>
+            </connections>
             <point key="canvasLocation" x="281" y="330"/>
         </collectionReusableView>
     </objects>

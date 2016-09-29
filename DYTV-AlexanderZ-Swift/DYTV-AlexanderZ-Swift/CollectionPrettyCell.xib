@@ -13,7 +13,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="286"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osh-Gb-13D">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osh-Gb-13D">
                         <rect key="frame" x="0.0" y="259" width="59" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="OEi-fb-XEV"/>
@@ -41,40 +41,47 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8888在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZx-Jq-ZMj">
-                        <rect key="frame" x="255" y="5" width="60" height="20"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FB-UG-NGX">
+                        <rect key="frame" x="251" y="5" width="62" height="26"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="3hL-bf-XQL"/>
-                            <constraint firstAttribute="height" constant="20" id="Nhx-9e-xHO"/>
+                            <constraint firstAttribute="height" constant="26" id="YDS-O5-pMl"/>
+                            <constraint firstAttribute="width" constant="62" id="xjg-As-Klg"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
+                        <state key="normal" title="8888人在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstItem="zqz-UI-mWn" firstAttribute="top" secondItem="Etg-Ye-OkY" secondAttribute="bottom" constant="10" id="2Ie-Bk-iNQ"/>
                 <constraint firstItem="osh-Gb-13D" firstAttribute="top" secondItem="zqz-UI-mWn" secondAttribute="bottom" constant="5" id="C1P-QC-UH2"/>
-                <constraint firstItem="gZx-Jq-ZMj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="PeI-Hy-OGn"/>
                 <constraint firstItem="Etg-Ye-OkY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SMP-1L-JFW"/>
                 <constraint firstAttribute="bottom" secondItem="osh-Gb-13D" secondAttribute="bottom" constant="5" id="WFf-ms-A1C"/>
                 <constraint firstAttribute="trailing" secondItem="zqz-UI-mWn" secondAttribute="trailing" id="c9F-49-7LW"/>
                 <constraint firstAttribute="trailing" secondItem="Etg-Ye-OkY" secondAttribute="trailing" id="fRD-VC-jC4"/>
                 <constraint firstItem="Etg-Ye-OkY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="i5Y-5v-xwW"/>
+                <constraint firstAttribute="trailing" secondItem="6FB-UG-NGX" secondAttribute="trailing" constant="8" id="iTN-Uk-g8u"/>
                 <constraint firstItem="osh-Gb-13D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jLx-eX-VTD"/>
-                <constraint firstAttribute="trailing" secondItem="gZx-Jq-ZMj" secondAttribute="trailing" constant="5" id="qCP-hN-Pb6"/>
+                <constraint firstItem="6FB-UG-NGX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="mNL-ry-JzE"/>
                 <constraint firstItem="zqz-UI-mWn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yJs-8K-m2P"/>
             </constraints>
             <size key="customSize" width="320" height="286"/>
+            <connections>
+                <outlet property="cityBtn" destination="osh-Gb-13D" id="Uup-P9-lJk"/>
+                <outlet property="iconImageView" destination="Etg-Ye-OkY" id="9bi-9U-dQF"/>
+                <outlet property="nickNameLabel" destination="zqz-UI-mWn" id="Zfg-nM-6Da"/>
+                <outlet property="onlineBtn" destination="6FB-UG-NGX" id="igM-tu-HTo"/>
+            </connections>
             <point key="canvasLocation" x="276" y="336"/>
         </collectionViewCell>
     </objects>

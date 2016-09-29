@@ -11,7 +11,7 @@ import UIKit
 private let kTitleViewH : CGFloat = 40
 
 class HomeViewController: UIViewController {
-
+    
     
     // 懒加载属性
     private lazy var pageTitleView : PageTitleView = {[weak self] in
@@ -19,10 +19,10 @@ class HomeViewController: UIViewController {
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, title: titles)
-//        titleView.backgroundColor = UIColor.blueColor()
+        //        titleView.backgroundColor = UIColor.blueColor()
         titleView.delegate = self
         return titleView
-    }()
+        }()
     
     private lazy var pageConteneView : PageContentView = {[weak self] in
         
@@ -44,14 +44,14 @@ class HomeViewController: UIViewController {
         contentView.delegate = self
         return contentView
         
-    }()
+        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
     }
-
+    
 }
 
 // 设置UI界面
@@ -92,7 +92,7 @@ extension HomeViewController {
 extension HomeViewController : PageTitleViewDelegate {
     
     func pageTitleView(titleView: PageTitleView, selectedIndex: Int) {
-//        print(index)
+        //        print(index)
         pageConteneView.setCurrentIndex(selectedIndex)
     }
 }

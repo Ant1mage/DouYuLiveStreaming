@@ -65,6 +65,12 @@
                 <constraint firstAttribute="trailing" secondItem="A4c-CM-rve" secondAttribute="trailing" constant="5" id="yHL-rQ-cNT"/>
             </constraints>
             <size key="customSize" width="365" height="197"/>
+            <connections>
+                <outlet property="iconImageView" destination="QYZ-Xc-77T" id="oNz-dF-GEW"/>
+                <outlet property="nickNameLabel" destination="1oy-St-bTv" id="KuK-Hg-bAe"/>
+                <outlet property="onlineBtn" destination="tro-Qk-JFj" id="1YQ-kh-tWr"/>
+                <outlet property="roomNameLabel" destination="A4c-CM-rve" id="zaw-VY-bjJ"/>
+            </connections>
             <point key="canvasLocation" x="300.5" y="396.5"/>
         </collectionViewCell>
     </objects>

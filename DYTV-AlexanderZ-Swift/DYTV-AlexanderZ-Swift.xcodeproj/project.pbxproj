@@ -28,6 +28,11 @@
 		324D7E481D987C1B000087EC /* CollectionPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E461D987C1B000087EC /* CollectionPrettyCell.swift */; };
 		324D7E491D987C1B000087EC /* CollectionPrettyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324D7E471D987C1B000087EC /* CollectionPrettyCell.xib */; };
 		324D7E4B1D988493000087EC /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E4A1D988493000087EC /* NetworkTools.swift */; };
+		324D7E561D9D8DFA000087EC /* AnchorGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E541D9D8DFA000087EC /* AnchorGroupModel.swift */; };
+		324D7E571D9D8DFA000087EC /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E551D9D8DFA000087EC /* AnchorModel.swift */; };
+		324D7E591D9D8E06000087EC /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E581D9D8E06000087EC /* RecommendViewModel.swift */; };
+		324D7E5B1D9D8E44000087EC /* NSDate + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E5A1D9D8E44000087EC /* NSDate + Extension.swift */; };
+		324D7E5D1D9DA7BC000087EC /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E5C1D9DA7BC000087EC /* CollectionBaseCell.swift */; };
 		EC3E7E8B125099B66EBB2026 /* Pods_DYTV_AlexanderZ_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF451FECC04AD9FA861A8E /* Pods_DYTV_AlexanderZ_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +60,11 @@
 		324D7E461D987C1B000087EC /* CollectionPrettyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionPrettyCell.swift; sourceTree = "<group>"; };
 		324D7E471D987C1B000087EC /* CollectionPrettyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionPrettyCell.xib; sourceTree = "<group>"; };
 		324D7E4A1D988493000087EC /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		324D7E541D9D8DFA000087EC /* AnchorGroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroupModel.swift; sourceTree = "<group>"; };
+		324D7E551D9D8DFA000087EC /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		324D7E581D9D8E06000087EC /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		324D7E5A1D9D8E44000087EC /* NSDate + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate + Extension.swift"; sourceTree = "<group>"; };
+		324D7E5C1D9DA7BC000087EC /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
 		94EF451FECC04AD9FA861A8E /* Pods_DYTV_AlexanderZ_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYTV_AlexanderZ_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A03E915D381BF6CC7821EF /* Pods-DYTV-AlexanderZ-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV-AlexanderZ-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV-AlexanderZ-Swift/Pods-DYTV-AlexanderZ-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		A08BA59364DCCB4CFFBFE04B /* Pods-DYTV-AlexanderZ-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV-AlexanderZ-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV-AlexanderZ-Swift/Pods-DYTV-AlexanderZ-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +198,8 @@
 		324D7E0F1D952610000087EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				324D7E541D9D8DFA000087EC /* AnchorGroupModel.swift */,
+				324D7E551D9D8DFA000087EC /* AnchorModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -201,6 +213,7 @@
 				324D7E3D1D9870D7000087EC /* CollectionNormalCell.xib */,
 				324D7E461D987C1B000087EC /* CollectionPrettyCell.swift */,
 				324D7E471D987C1B000087EC /* CollectionPrettyCell.xib */,
+				324D7E5C1D9DA7BC000087EC /* CollectionBaseCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -241,6 +254,7 @@
 		324D7E171D9527FB000087EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				324D7E581D9D8E06000087EC /* RecommendViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -314,6 +328,7 @@
 		324D7E291D952E7B000087EC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				324D7E5A1D9D8E44000087EC /* NSDate + Extension.swift */,
 				324D7E2A1D952E9F000087EC /* UIBarButtonItem+Extension.swift */,
 				324D7E301D95409A000087EC /* UIColor+Extension.swift */,
 			);
@@ -453,20 +468,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				324D7E2D1D95353C000087EC /* Common.swift in Sources */,
+				324D7E561D9D8DFA000087EC /* AnchorGroupModel.swift in Sources */,
 				324D7DF51D95230D000087EC /* AppDelegate.swift in Sources */,
 				324D7E331D95A430000087EC /* PageContentView.swift in Sources */,
 				324D7E481D987C1B000087EC /* CollectionPrettyCell.swift in Sources */,
+				324D7E591D9D8E06000087EC /* RecommendViewModel.swift in Sources */,
+				324D7E5B1D9D8E44000087EC /* NSDate + Extension.swift in Sources */,
 				324D7E131D95264B000087EC /* MainViewController.swift in Sources */,
 				324D7E261D95285C000087EC /* FollowViewController.swift in Sources */,
 				324D7E371D98608F000087EC /* RecommendViewController.swift in Sources */,
 				324D7E2B1D952E9F000087EC /* UIBarButtonItem+Extension.swift in Sources */,
 				324D7E4B1D988493000087EC /* NetworkTools.swift in Sources */,
+				324D7E5D1D9DA7BC000087EC /* CollectionBaseCell.swift in Sources */,
 				324D7E3A1D986905000087EC /* CollectionHeaderView.swift in Sources */,
 				324D7E3E1D9870D7000087EC /* CollectionNormalCell.swift in Sources */,
 				324D7E241D952852000087EC /* LiveViewController.swift in Sources */,
 				324D7E2F1D953E17000087EC /* PageTitleView.swift in Sources */,
 				324D7E221D952848000087EC /* HomeViewController.swift in Sources */,
 				324D7E281D952864000087EC /* MineViewController.swift in Sources */,
+				324D7E571D9D8DFA000087EC /* AnchorModel.swift in Sources */,
 				324D7E311D95409A000087EC /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

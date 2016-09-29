@@ -8,5 +8,5 @@ target 'DYTV-AlexanderZ-Swift' do
   # Pods for DYTV-AlexanderZ-Swift
 
 pod ‘Alamofire’
-
+pod ‘Kingfisher’
 end
