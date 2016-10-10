@@ -12,24 +12,23 @@ class RecommendViewModel {
     
     // 懒加载属性
     lazy var anchorGroups : [AnchorGroupModel] = [AnchorGroupModel]()
+    lazy var cycleModels : [CycleModel] = [CycleModel]()
     private lazy var bigDataGroup : AnchorGroupModel = AnchorGroupModel()
     private lazy var prettyGroup : AnchorGroupModel = AnchorGroupModel()
     
 
 }
 
-
 // 发送网络请求
 extension RecommendViewModel {
     
+    // 请求推荐数据
     func requestData(finishCallback : () -> ()) {
         
         let parameters = ["limit" : "4", "offset" : "0", "time" : NSDate.getCurrentTime()]
         
         // 创建组
         let axGroup = dispatch_group_create()
-        
-        
         
         // 推荐数据
         dispatch_group_enter(axGroup)
@@ -110,7 +109,23 @@ extension RecommendViewModel {
             
             finishCallback()
         }
-        
+
+    }
+    
+    // 无限轮播数据
+    func requestCycleData(finishCallback : () -> ()) {
+        NetworkTools.requestData(.GET, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
+
+            guard let resultDict = result as? [String : NSObject] else { return }
+            
+            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
+            
+            for dict in dataArray {
+                self.cycleModels.append(CycleModel(dict: dict))
+            }
+            
+            finishCallback()
+        }
     }
     
 }

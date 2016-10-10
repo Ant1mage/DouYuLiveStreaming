@@ -12,6 +12,10 @@ private let kItemMargin : CGFloat = 10
 private let kItemW = (kScreenW - 3 * kItemMargin) / 2
 private let kNormalItemH = kItemW * 3 / 4
 private let kPrettyItemH = kItemW * 4 / 3
+private let kHeaderViewH : CGFloat = 50
+
+private let kCycleViewH = kScreenW * 3 / 8
+
 
 private let kNormalCellID = "kNormalCellID"
 private let kPrettyCellID = "kPrettyCellID"
@@ -21,6 +25,13 @@ class RecommendViewController: UIViewController {
     
     // 懒加载属性
     private lazy var recommendViewModel : RecommendViewModel = RecommendViewModel()
+    
+    private lazy var cycleView : RecommendCycleView = {
+        
+        let cycleView = RecommendCycleView.recommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        return cycleView
+    }()
     
     private lazy var collectionView : UICollectionView = {[unowned self] in
         
@@ -53,19 +64,32 @@ class RecommendViewController: UIViewController {
         
         // 发送网络请求
         loadData()
+        
+        
     }
     
 }
+
 
 extension RecommendViewController {
     
     // 请求数据
     private func loadData() {
         
-        recommendViewModel.requestData {
+        // 推荐页面数据
+        self.recommendViewModel.requestData {
+            
             self.collectionView.reloadData()
         }
+        
+        // 无限轮播数据
+        recommendViewModel.requestCycleData {
+            self.cycleView.cycleModels = self.recommendViewModel.cycleModels
+        }
+        
     }
+    
+    
 }
 
 
@@ -75,6 +99,10 @@ extension RecommendViewController {
     private func setupUI() {
         
         view.addSubview(collectionView)
+        collectionView.addSubview(cycleView)
+        
+        // 设置collectionView内边距
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
         
     }
     
@@ -84,8 +112,8 @@ extension RecommendViewController {
 extension RecommendViewController : UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return recommendViewModel.anchorGroups.count
         
+        return recommendViewModel.anchorGroups.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -105,10 +133,10 @@ extension RecommendViewController : UICollectionViewDataSource,UICollectionViewD
         
         if indexPath.section == 1 {
             cell = collectionView.dequeueReusableCellWithReuseIdentifier(kPrettyCellID, forIndexPath: indexPath) as! CollectionPrettyCell
-
+            
         } else {
             cell = collectionView.dequeueReusableCellWithReuseIdentifier(kNormalCellID, forIndexPath: indexPath) as! CollectionNormalCell
-
+            
         }
         
         cell.anchor = anchor
@@ -121,7 +149,6 @@ extension RecommendViewController : UICollectionViewDataSource,UICollectionViewD
         let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kHeaderViewID, forIndexPath: indexPath) as! CollectionHeaderView
         
         headerView.group = recommendViewModel.anchorGroups[indexPath.section]
-        
         
         return headerView
     }
