@@ -12,6 +12,7 @@
 		3206D7531DABDAFD00F27AB8 /* CycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206D7521DABDAFD00F27AB8 /* CycleModel.swift */; };
 		3206D75E1DAD513B00F27AB8 /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206D75C1DAD513B00F27AB8 /* CollectionCycleCell.swift */; };
 		3206D75F1DAD513B00F27AB8 /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3206D75D1DAD513B00F27AB8 /* CollectionCycleCell.xib */; };
+		3206D7831DAD82A200F27AB8 /* LiveVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206D7821DAD82A200F27AB8 /* LiveVideoViewController.swift */; };
 		324D7DF51D95230D000087EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7DF41D95230D000087EC /* AppDelegate.swift */; };
 		324D7DFF1D95230D000087EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324D7DFD1D95230D000087EC /* LaunchScreen.storyboard */; };
 		324D7E071D9523F4000087EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 324D7E061D9523F4000087EC /* Images.xcassets */; };
@@ -47,6 +48,7 @@
 		3206D7521DABDAFD00F27AB8 /* CycleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleModel.swift; sourceTree = "<group>"; };
 		3206D75C1DAD513B00F27AB8 /* CollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
 		3206D75D1DAD513B00F27AB8 /* CollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
+		3206D7821DAD82A200F27AB8 /* LiveVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveVideoViewController.swift; sourceTree = "<group>"; };
 		324D7DF11D95230D000087EC /* DYTV-AlexanderZ-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DYTV-AlexanderZ-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		324D7DF41D95230D000087EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		324D7DFE1D95230D000087EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,46 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3206D77D1DAD81DD00F27AB8 /* LiveVideo(直播页) */ = {
+			isa = PBXGroup;
+			children = (
+				3206D7811DAD821400F27AB8 /* Controller */,
+				3206D7801DAD820400F27AB8 /* View */,
+				3206D77F1DAD81FA00F27AB8 /* Model */,
+				3206D77E1DAD81F200F27AB8 /* ViewModel */,
+			);
+			name = "LiveVideo(直播页)";
+			sourceTree = "<group>";
+		};
+		3206D77E1DAD81F200F27AB8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		3206D77F1DAD81FA00F27AB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3206D7801DAD820400F27AB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3206D7811DAD821400F27AB8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3206D7821DAD82A200F27AB8 /* LiveVideoViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		324D7DE81D95230D000087EC = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +176,7 @@
 		324D7E081D9524CA000087EC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3206D77D1DAD81DD00F27AB8 /* LiveVideo(直播页) */,
 				324D7E091D9524D8000087EC /* Main(主框架) */,
 				324D7E0A1D9524E2000087EC /* Home(首页) */,
 				324D7E0B1D9524EF000087EC /* Live(直播) */,
@@ -489,6 +532,7 @@
 				324D7DF51D95230D000087EC /* AppDelegate.swift in Sources */,
 				324D7E331D95A430000087EC /* PageContentView.swift in Sources */,
 				324D7E481D987C1B000087EC /* CollectionPrettyCell.swift in Sources */,
+				3206D7831DAD82A200F27AB8 /* LiveVideoViewController.swift in Sources */,
 				324D7E591D9D8E06000087EC /* RecommendViewModel.swift in Sources */,
 				324D7E5B1D9D8E44000087EC /* NSDate + Extension.swift in Sources */,
 				324D7E131D95264B000087EC /* MainViewController.swift in Sources */,
@@ -616,6 +660,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "DYTV-AlexanderZ-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -631,6 +679,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "DYTV-AlexanderZ-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

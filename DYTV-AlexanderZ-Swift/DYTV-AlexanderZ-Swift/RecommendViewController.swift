@@ -145,6 +145,19 @@ extension RecommendViewController : UICollectionViewDataSource,UICollectionViewD
         return cell
     }
     
+    
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        
+//        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+//        
+//        cell?.backgroundColor = UIColor.blueColor()
+//        
+//        let liveVideoVC = LiveVideoViewController()
+//        
+//        self.navigationController?.pushViewController(liveVideoVC, animated: true)
+//    }
+    
+    
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
         let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: kHeaderViewID, forIndexPath: indexPath) as! CollectionHeaderView
