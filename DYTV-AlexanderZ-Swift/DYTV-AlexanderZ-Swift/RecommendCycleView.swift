@@ -122,6 +122,7 @@ extension RecommendCycleView {
         
     }
     
+    
     private func cancleTimer() {
         scrollTimer?.invalidate()
         scrollTimer = nil
