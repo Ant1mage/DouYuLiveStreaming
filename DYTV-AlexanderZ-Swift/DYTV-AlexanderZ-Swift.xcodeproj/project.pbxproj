@@ -10,8 +10,8 @@
 		3206D74D1DABD38700F27AB8 /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206D74C1DABD38700F27AB8 /* RecommendCycleView.swift */; };
 		3206D74F1DABD3C300F27AB8 /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3206D74E1DABD3C300F27AB8 /* RecommendCycleView.xib */; };
 		3206D7531DABDAFD00F27AB8 /* CycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206D7521DABDAFD00F27AB8 /* CycleModel.swift */; };
-		3206D7561DABE00600F27AB8 /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206D7541DABE00600F27AB8 /* CollectionCycleCell.swift */; };
-		3206D7571DABE00600F27AB8 /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3206D7551DABE00600F27AB8 /* CollectionCycleCell.xib */; };
+		3206D75E1DAD513B00F27AB8 /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206D75C1DAD513B00F27AB8 /* CollectionCycleCell.swift */; };
+		3206D75F1DAD513B00F27AB8 /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3206D75D1DAD513B00F27AB8 /* CollectionCycleCell.xib */; };
 		324D7DF51D95230D000087EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7DF41D95230D000087EC /* AppDelegate.swift */; };
 		324D7DFF1D95230D000087EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324D7DFD1D95230D000087EC /* LaunchScreen.storyboard */; };
 		324D7E071D9523F4000087EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 324D7E061D9523F4000087EC /* Images.xcassets */; };
@@ -45,8 +45,8 @@
 		3206D74C1DABD38700F27AB8 /* RecommendCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
 		3206D74E1DABD3C300F27AB8 /* RecommendCycleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
 		3206D7521DABDAFD00F27AB8 /* CycleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleModel.swift; sourceTree = "<group>"; };
-		3206D7541DABE00600F27AB8 /* CollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
-		3206D7551DABE00600F27AB8 /* CollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
+		3206D75C1DAD513B00F27AB8 /* CollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
+		3206D75D1DAD513B00F27AB8 /* CollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
 		324D7DF11D95230D000087EC /* DYTV-AlexanderZ-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DYTV-AlexanderZ-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		324D7DF41D95230D000087EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		324D7DFE1D95230D000087EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -251,8 +251,8 @@
 				324D7E391D986905000087EC /* CollectionHeaderView.xib */,
 				3206D74C1DABD38700F27AB8 /* RecommendCycleView.swift */,
 				3206D74E1DABD3C300F27AB8 /* RecommendCycleView.xib */,
-				3206D7541DABE00600F27AB8 /* CollectionCycleCell.swift */,
-				3206D7551DABE00600F27AB8 /* CollectionCycleCell.xib */,
+				3206D75C1DAD513B00F27AB8 /* CollectionCycleCell.swift */,
+				3206D75D1DAD513B00F27AB8 /* CollectionCycleCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -422,7 +422,7 @@
 				324D7E071D9523F4000087EC /* Images.xcassets in Resources */,
 				324D7DFF1D95230D000087EC /* LaunchScreen.storyboard in Resources */,
 				3206D74F1DABD3C300F27AB8 /* RecommendCycleView.xib in Resources */,
-				3206D7571DABE00600F27AB8 /* CollectionCycleCell.xib in Resources */,
+				3206D75F1DAD513B00F27AB8 /* CollectionCycleCell.xib in Resources */,
 				324D7E491D987C1B000087EC /* CollectionPrettyCell.xib in Resources */,
 				324D7E3F1D9870D7000087EC /* CollectionNormalCell.xib in Resources */,
 				324D7E3B1D986905000087EC /* CollectionHeaderView.xib in Resources */,
@@ -492,7 +492,7 @@
 				324D7E591D9D8E06000087EC /* RecommendViewModel.swift in Sources */,
 				324D7E5B1D9D8E44000087EC /* NSDate + Extension.swift in Sources */,
 				324D7E131D95264B000087EC /* MainViewController.swift in Sources */,
-				3206D7561DABE00600F27AB8 /* CollectionCycleCell.swift in Sources */,
+				3206D75E1DAD513B00F27AB8 /* CollectionCycleCell.swift in Sources */,
 				324D7E261D95285C000087EC /* FollowViewController.swift in Sources */,
 				324D7E371D98608F000087EC /* RecommendViewController.swift in Sources */,
 				324D7E2B1D952E9F000087EC /* UIBarButtonItem+Extension.swift in Sources */,

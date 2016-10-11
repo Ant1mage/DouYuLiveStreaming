@@ -114,8 +114,8 @@ extension RecommendViewModel {
     
     // 无限轮播数据
     func requestCycleData(finishCallback : () -> ()) {
-        NetworkTools.requestData(.GET, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
-
+        NetworkTools.requestData(.GET, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["Version" : "2.300"]) { (result) in
+                        
             guard let resultDict = result as? [String : NSObject] else { return }
             
             guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }

@@ -23,24 +23,25 @@ class RecommendCycleView: UIView {
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectView: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         autoresizingMask = .None
         
+        collectView.showsHorizontalScrollIndicator = false
+        collectView.bounces = false
         // 注册cell
         collectView.registerNib(UINib(nibName: "CollectionCycleCell", bundle: nil), forCellWithReuseIdentifier: kCycleID)
+        
     }
     
     override func layoutSubviews() {
         
+        
         // 设置layout
         let layout = collectView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = collectView.bounds.size
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        collectView.pagingEnabled = true
-        layout.scrollDirection = .Horizontal
     }
 
 }

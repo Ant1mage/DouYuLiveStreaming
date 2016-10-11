@@ -9,10 +9,11 @@
 import UIKit
 import Kingfisher
 class CollectionCycleCell: UICollectionViewCell {
-
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     
+    
+
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     var cycleModel : CycleModel? {
         didSet {
             titleLabel.text = cycleModel?.title

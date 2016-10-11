@@ -31,7 +31,7 @@ class CycleModel: NSObject {
         setValuesForKeysWithDictionary(dict)
     }
     
-    override func setValue(value: AnyObject?, forKey key: String) {
+    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
     }
     

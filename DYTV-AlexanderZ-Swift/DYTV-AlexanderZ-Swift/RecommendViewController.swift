@@ -14,7 +14,7 @@ private let kNormalItemH = kItemW * 3 / 4
 private let kPrettyItemH = kItemW * 4 / 3
 private let kHeaderViewH : CGFloat = 50
 
-private let kCycleViewH = kScreenW * 3 / 8
+private let kCycleViewH = kScreenW * 3 / 7
 
 
 private let kNormalCellID = "kNormalCellID"
