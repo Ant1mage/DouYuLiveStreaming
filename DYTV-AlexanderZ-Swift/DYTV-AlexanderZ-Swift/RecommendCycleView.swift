@@ -12,7 +12,7 @@ private let kCycleID = "kCycleID"
 
 class RecommendCycleView: UIView {
     
-    var cycleTimer : NSTimer?
+    var scrollTimer : NSTimer?
     var cycleModels : [CycleModel]? {
         didSet {
             
@@ -108,10 +108,10 @@ extension RecommendCycleView {
     
     private func addTimer() {
         
-        cycleTimer = NSTimer(timeInterval: 2, target: self, selector: #selector(RecommendCycleView.scrollNext), userInfo: nil, repeats: true)
+        scrollTimer = NSTimer(timeInterval: 2, target: self, selector: #selector(RecommendCycleView.scrollNext), userInfo: nil, repeats: true)
         
         // runloop设置
-        NSRunLoop.mainRunLoop().addTimer(cycleTimer!, forMode: NSRunLoopCommonModes)
+        NSRunLoop.mainRunLoop().addTimer(scrollTimer!, forMode: NSRunLoopCommonModes)
         
     }
     
@@ -123,8 +123,8 @@ extension RecommendCycleView {
     }
     
     private func cancleTimer() {
-        cycleTimer?.invalidate()
-        cycleTimer = nil
+        scrollTimer?.invalidate()
+        scrollTimer = nil
     }
     
     
