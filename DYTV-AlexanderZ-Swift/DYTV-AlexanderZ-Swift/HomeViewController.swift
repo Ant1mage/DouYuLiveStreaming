@@ -26,11 +26,9 @@ class HomeViewController: UIViewController {
     
     private lazy var pageConteneView : PageContentView = {[weak self] in
         
-        // 1.确定View的frame
         let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabbarH
         let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
         
-        // 2.确定传入的子控制器
         var childVcs = [UIViewController]()
         childVcs.append(RecommendViewController())
         for _ in 0..<3 {
@@ -54,7 +52,7 @@ class HomeViewController: UIViewController {
     
 }
 
-// 设置UI界面
+// MARK:- 设置UI
 extension HomeViewController {
     
     private func setupUI() {
@@ -64,7 +62,6 @@ extension HomeViewController {
         
         setNavBar()
         
-        // 添加子控件
         view.addSubview(pageTitleView)
         view.addSubview(pageConteneView)
         pageConteneView.backgroundColor = UIColor.blueColor()
@@ -88,7 +85,7 @@ extension HomeViewController {
     
 }
 
-// 遵守PageTitleViewDelegate
+// MARK:- 遵守PageTitleViewDelegate
 extension HomeViewController : PageTitleViewDelegate {
     
     func pageTitleView(titleView: PageTitleView, selectedIndex: Int) {
@@ -97,7 +94,7 @@ extension HomeViewController : PageTitleViewDelegate {
     }
 }
 
-// 遵守PageContentViewDelegate
+// MARK:- 遵守PageContentViewDelegate
 extension HomeViewController : PageContentViewDelegate {
     
     func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {

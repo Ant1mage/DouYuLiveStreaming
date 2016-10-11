@@ -31,10 +31,8 @@ class CollectionBaseCell: UICollectionViewCell {
         
         onlineBtn.setTitle(onlineString, forState: .Normal)
         
-        // 2.昵称显示
         nickNameLabel.text = anchor.nickname
         
-        // 4.设置封面图片
         guard let iconURL = NSURL (string:anchor.vertical_src) else { return }
         iconImageView.kf_setImageWithURL(iconURL)
 

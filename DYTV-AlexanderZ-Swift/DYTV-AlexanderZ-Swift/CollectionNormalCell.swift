@@ -10,7 +10,6 @@ import UIKit
 
 class CollectionNormalCell: CollectionBaseCell {
     
-    // 拿到控件属性
     @IBOutlet weak var roomNameLabel: UILabel!
     
     

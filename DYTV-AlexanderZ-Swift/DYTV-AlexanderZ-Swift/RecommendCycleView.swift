@@ -11,13 +11,18 @@ import UIKit
 private let kCycleID = "kCycleID"
 
 class RecommendCycleView: UIView {
-
+    
+    var cycleTimer : NSTimer?
     var cycleModels : [CycleModel]? {
         didSet {
             
             collectView.reloadData()
             
             pageControl.numberOfPages = cycleModels?.count ?? 0
+            
+            cancleTimer()
+            addTimer()
+
         }
     }
     
@@ -31,6 +36,9 @@ class RecommendCycleView: UIView {
         
         collectView.showsHorizontalScrollIndicator = false
         collectView.bounces = false
+        collectView.dataSource = self
+        collectView.delegate = self
+        
         // 注册cell
         collectView.registerNib(UINib(nibName: "CollectionCycleCell", bundle: nil), forCellWithReuseIdentifier: kCycleID)
         
@@ -56,8 +64,8 @@ extension RecommendCycleView {
 }
 
 
-// 遵守collectionView数据源
-extension RecommendCycleView : UICollectionViewDelegate {
+// MARK:- 遵守collectionView数据源
+extension RecommendCycleView : UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (cycleModels?.count ?? 0) * 10000  // *10000 返回足够多的cell来做无限滚动
@@ -71,6 +79,11 @@ extension RecommendCycleView : UICollectionViewDelegate {
         return cell
     }
     
+}
+
+// MARK:- 遵守collectionView代理
+extension RecommendCycleView : UICollectionViewDelegate {
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.x + scrollView.bounds.size.width * 0.5
@@ -79,7 +92,40 @@ extension RecommendCycleView : UICollectionViewDelegate {
         
     }
     
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        cancleTimer()
+    }
     
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        addTimer()
+    }
+    
+}
+
+
+// MARK:- 添加定时器实现自动滚动
+extension RecommendCycleView {
+    
+    private func addTimer() {
+        
+        cycleTimer = NSTimer(timeInterval: 2, target: self, selector: #selector(RecommendCycleView.scrollNext), userInfo: nil, repeats: true)
+        
+        // runloop设置
+        NSRunLoop.mainRunLoop().addTimer(cycleTimer!, forMode: NSRunLoopCommonModes)
+        
+    }
+    
+    @objc private func scrollNext() {
+        
+        let offset = collectView.contentOffset.x + collectView.bounds.width
+        collectView.setContentOffset(CGPoint(x: offset, y: 0), animated: true)
+        
+    }
+    
+    private func cancleTimer() {
+        cycleTimer?.invalidate()
+        cycleTimer = nil
+    }
     
     
 }

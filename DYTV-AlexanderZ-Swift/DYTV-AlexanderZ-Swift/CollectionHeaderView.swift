@@ -10,7 +10,6 @@ import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
 
-    // 控件属性
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var iconImageView: UIImageView!

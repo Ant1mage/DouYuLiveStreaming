@@ -71,6 +71,7 @@ class RecommendViewController: UIViewController {
 }
 
 
+// MARK:- 请求网络数据
 extension RecommendViewController {
     
     // 请求数据
@@ -93,7 +94,7 @@ extension RecommendViewController {
 }
 
 
-// 设置UI界面
+// MARK:- 设置UI
 extension RecommendViewController {
     
     private func setupUI() {
@@ -108,7 +109,7 @@ extension RecommendViewController {
     
 }
 
-// CollectionViewdataSource协议
+// MARK:- CollectionViewdataSource协议
 extension RecommendViewController : UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

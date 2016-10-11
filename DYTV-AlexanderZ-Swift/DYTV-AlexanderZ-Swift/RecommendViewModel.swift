@@ -19,7 +19,7 @@ class RecommendViewModel {
 
 }
 
-// 发送网络请求
+// MARK:- 发送网络请求
 extension RecommendViewModel {
     
     // 请求推荐数据
@@ -41,7 +41,6 @@ extension RecommendViewModel {
             guard let dataArray =  resultDict["data"] as? [[String : NSObject]] else { return }
             
             // 遍历数组 转模型
-            
             self.bigDataGroup.tag_name = "热门"
             self.bigDataGroup.icon_name = "home_header_hot"
             
@@ -66,7 +65,6 @@ extension RecommendViewModel {
             guard let dataArray =  resultDict["data"] as? [[String : NSObject]] else { return }
             
             // 遍历数组 转模型
-            
             self.prettyGroup.tag_name = "颜值"
             self.prettyGroup.icon_name = "home_header_phone"
             
@@ -90,7 +88,6 @@ extension RecommendViewModel {
             
             // 根据key获取数组
             guard let dataArray =  resultDict["data"] as? [[String : NSObject]] else { return }
-            
             
             // 遍历数组 转模型
             for dict in dataArray {

@@ -19,10 +19,6 @@
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
-                    <connections>
-                        <outlet property="dataSource" destination="zbz-iO-tuO" id="iJH-fb-gh7"/>
-                        <outlet property="delegate" destination="zbz-iO-tuO" id="ViN-Us-Bsk"/>
-                    </connections>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-1h-llA">
                     <rect key="frame" x="326" y="116" width="39" height="37"/>
@@ -44,7 +40,7 @@
                 <outlet property="collectView" destination="b0z-hm-hN6" id="Xzk-R7-f2k"/>
                 <outlet property="pageControl" destination="6jh-1h-llA" id="Guy-cE-MyC"/>
             </connections>
-            <point key="canvasLocation" x="289.5" y="237"/>
+            <point key="canvasLocation" x="191.5" y="225"/>
         </view>
     </objects>
 </document>
