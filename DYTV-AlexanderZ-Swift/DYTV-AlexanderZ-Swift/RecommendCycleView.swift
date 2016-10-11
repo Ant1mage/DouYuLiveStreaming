@@ -55,11 +55,12 @@ extension RecommendCycleView {
     
 }
 
+
 // 遵守collectionView数据源
 extension RecommendCycleView : UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cycleModels?.count ?? 0
+        return (cycleModels?.count ?? 0) * 10000  // *10000 返回足够多的cell来做无限滚动
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -69,6 +70,16 @@ extension RecommendCycleView : UICollectionViewDelegate {
         
         return cell
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        let offset = scrollView.contentOffset.x + scrollView.bounds.size.width * 0.5
+        
+        pageControl.currentPage = Int(offset / scrollView.bounds.size.width) % (cycleModels?.count ?? 1)
+        
+    }
+    
+    
     
     
 }
