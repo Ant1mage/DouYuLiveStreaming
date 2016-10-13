@@ -29,12 +29,12 @@ class CollectionBaseCell: UICollectionViewCell {
             onlineString = "\(anchor.online)人在线"
         }
         
-        onlineBtn.setTitle(onlineString, forState: .Normal)
+        onlineBtn.setTitle(onlineString, for: .normal)
         
         nickNameLabel.text = anchor.nickname
         
-        guard let iconURL = NSURL (string:anchor.vertical_src) else { return }
-        iconImageView.kf_setImageWithURL(iconURL)
+            guard let iconURL = URL(string: anchor.vertical_src) else { return }
+            iconImageView.kf.setImage(with: iconURL)
 
         }
     

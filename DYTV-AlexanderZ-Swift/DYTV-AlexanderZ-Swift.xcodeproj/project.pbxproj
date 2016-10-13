@@ -13,6 +13,9 @@
 		3206D75E1DAD513B00F27AB8 /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206D75C1DAD513B00F27AB8 /* CollectionCycleCell.swift */; };
 		3206D75F1DAD513B00F27AB8 /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3206D75D1DAD513B00F27AB8 /* CollectionCycleCell.xib */; };
 		3206D7831DAD82A200F27AB8 /* LiveVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206D7821DAD82A200F27AB8 /* LiveVideoViewController.swift */; };
+		3235C4E31DB010DF00C9E873 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3235C4E21DB010DF00C9E873 /* BaseViewModel.swift */; };
+		3235C4E51DB0119E00C9E873 /* BaseGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3235C4E41DB0119E00C9E873 /* BaseGameModel.swift */; };
+		3235C4E71DB011FE00C9E873 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3235C4E61DB011FE00C9E873 /* BaseViewController.swift */; };
 		324D7DF51D95230D000087EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7DF41D95230D000087EC /* AppDelegate.swift */; };
 		324D7DFF1D95230D000087EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324D7DFD1D95230D000087EC /* LaunchScreen.storyboard */; };
 		324D7E071D9523F4000087EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 324D7E061D9523F4000087EC /* Images.xcassets */; };
@@ -39,6 +42,11 @@
 		324D7E591D9D8E06000087EC /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E581D9D8E06000087EC /* RecommendViewModel.swift */; };
 		324D7E5B1D9D8E44000087EC /* NSDate + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E5A1D9D8E44000087EC /* NSDate + Extension.swift */; };
 		324D7E5D1D9DA7BC000087EC /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D7E5C1D9DA7BC000087EC /* CollectionBaseCell.swift */; };
+		327DC3331DAFFA6800DAB0DC /* RecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327DC3321DAFFA6800DAB0DC /* RecommendGameView.swift */; };
+		327DC3351DAFFA7C00DAB0DC /* RecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327DC3341DAFFA7C00DAB0DC /* RecommendGameView.xib */; };
+		327DC3371DB0006500DAB0DC /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327DC3361DB0006500DAB0DC /* GameModel.swift */; };
+		327DC33A1DB0020100DAB0DC /* CollectionGameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327DC3381DB0020100DAB0DC /* CollectionGameViewCell.swift */; };
+		327DC33B1DB0020100DAB0DC /* CollectionGameViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327DC3391DB0020100DAB0DC /* CollectionGameViewCell.xib */; };
 		EC3E7E8B125099B66EBB2026 /* Pods_DYTV_AlexanderZ_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF451FECC04AD9FA861A8E /* Pods_DYTV_AlexanderZ_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +57,9 @@
 		3206D75C1DAD513B00F27AB8 /* CollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
 		3206D75D1DAD513B00F27AB8 /* CollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
 		3206D7821DAD82A200F27AB8 /* LiveVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveVideoViewController.swift; sourceTree = "<group>"; };
+		3235C4E21DB010DF00C9E873 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		3235C4E41DB0119E00C9E873 /* BaseGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGameModel.swift; sourceTree = "<group>"; };
+		3235C4E61DB011FE00C9E873 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		324D7DF11D95230D000087EC /* DYTV-AlexanderZ-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DYTV-AlexanderZ-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		324D7DF41D95230D000087EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		324D7DFE1D95230D000087EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,6 +88,11 @@
 		324D7E581D9D8E06000087EC /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		324D7E5A1D9D8E44000087EC /* NSDate + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate + Extension.swift"; sourceTree = "<group>"; };
 		324D7E5C1D9DA7BC000087EC /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
+		327DC3321DAFFA6800DAB0DC /* RecommendGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendGameView.swift; sourceTree = "<group>"; };
+		327DC3341DAFFA7C00DAB0DC /* RecommendGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendGameView.xib; sourceTree = "<group>"; };
+		327DC3361DB0006500DAB0DC /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		327DC3381DB0020100DAB0DC /* CollectionGameViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionGameViewCell.swift; sourceTree = "<group>"; };
+		327DC3391DB0020100DAB0DC /* CollectionGameViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionGameViewCell.xib; sourceTree = "<group>"; };
 		94EF451FECC04AD9FA861A8E /* Pods_DYTV_AlexanderZ_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYTV_AlexanderZ_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A03E915D381BF6CC7821EF /* Pods-DYTV-AlexanderZ-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV-AlexanderZ-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV-AlexanderZ-Swift/Pods-DYTV-AlexanderZ-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		A08BA59364DCCB4CFFBFE04B /* Pods-DYTV-AlexanderZ-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV-AlexanderZ-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV-AlexanderZ-Swift/Pods-DYTV-AlexanderZ-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +159,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		3235C4E11DB010C700C9E873 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3235C4E21DB010DF00C9E873 /* BaseViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		324D7DE81D95230D000087EC = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +214,7 @@
 		324D7E091D9524D8000087EC /* Main(主框架) */ = {
 			isa = PBXGroup;
 			children = (
+				3235C4E11DB010C700C9E873 /* ViewModel */,
 				324D7E111D95261A000087EC /* Controller */,
 				324D7E101D952615000087EC /* View */,
 				324D7E0F1D952610000087EC /* Model */,
@@ -253,6 +278,7 @@
 			children = (
 				324D7E541D9D8DFA000087EC /* AnchorGroupModel.swift */,
 				324D7E551D9D8DFA000087EC /* AnchorModel.swift */,
+				3235C4E41DB0119E00C9E873 /* BaseGameModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -275,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				324D7E121D95264B000087EC /* MainViewController.swift */,
+				3235C4E61DB011FE00C9E873 /* BaseViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -283,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				3206D7521DABDAFD00F27AB8 /* CycleModel.swift */,
+				327DC3361DB0006500DAB0DC /* GameModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -296,6 +324,10 @@
 				3206D74E1DABD3C300F27AB8 /* RecommendCycleView.xib */,
 				3206D75C1DAD513B00F27AB8 /* CollectionCycleCell.swift */,
 				3206D75D1DAD513B00F27AB8 /* CollectionCycleCell.xib */,
+				327DC3321DAFFA6800DAB0DC /* RecommendGameView.swift */,
+				327DC3341DAFFA7C00DAB0DC /* RecommendGameView.xib */,
+				327DC3381DB0020100DAB0DC /* CollectionGameViewCell.swift */,
+				327DC3391DB0020100DAB0DC /* CollectionGameViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -431,11 +463,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Alexander Zou";
 				TargetAttributes = {
 					324D7DF01D95230D000087EC = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = MDG236NNW7;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -465,8 +500,10 @@
 				324D7E071D9523F4000087EC /* Images.xcassets in Resources */,
 				324D7DFF1D95230D000087EC /* LaunchScreen.storyboard in Resources */,
 				3206D74F1DABD3C300F27AB8 /* RecommendCycleView.xib in Resources */,
+				327DC33B1DB0020100DAB0DC /* CollectionGameViewCell.xib in Resources */,
 				3206D75F1DAD513B00F27AB8 /* CollectionCycleCell.xib in Resources */,
 				324D7E491D987C1B000087EC /* CollectionPrettyCell.xib in Resources */,
+				327DC3351DAFFA7C00DAB0DC /* RecommendGameView.xib in Resources */,
 				324D7E3F1D9870D7000087EC /* CollectionNormalCell.xib in Resources */,
 				324D7E3B1D986905000087EC /* CollectionHeaderView.xib in Resources */,
 			);
@@ -527,9 +564,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327DC33A1DB0020100DAB0DC /* CollectionGameViewCell.swift in Sources */,
 				324D7E2D1D95353C000087EC /* Common.swift in Sources */,
 				324D7E561D9D8DFA000087EC /* AnchorGroupModel.swift in Sources */,
 				324D7DF51D95230D000087EC /* AppDelegate.swift in Sources */,
+				3235C4E71DB011FE00C9E873 /* BaseViewController.swift in Sources */,
 				324D7E331D95A430000087EC /* PageContentView.swift in Sources */,
 				324D7E481D987C1B000087EC /* CollectionPrettyCell.swift in Sources */,
 				3206D7831DAD82A200F27AB8 /* LiveVideoViewController.swift in Sources */,
@@ -546,7 +585,11 @@
 				324D7E3E1D9870D7000087EC /* CollectionNormalCell.swift in Sources */,
 				324D7E241D952852000087EC /* LiveViewController.swift in Sources */,
 				324D7E2F1D953E17000087EC /* PageTitleView.swift in Sources */,
+				327DC3331DAFFA6800DAB0DC /* RecommendGameView.swift in Sources */,
+				327DC3371DB0006500DAB0DC /* GameModel.swift in Sources */,
 				324D7E221D952848000087EC /* HomeViewController.swift in Sources */,
+				3235C4E31DB010DF00C9E873 /* BaseViewModel.swift in Sources */,
+				3235C4E51DB0119E00C9E873 /* BaseGameModel.swift in Sources */,
 				324D7E281D952864000087EC /* MineViewController.swift in Sources */,
 				324D7E571D9D8DFA000087EC /* AnchorModel.swift in Sources */,
 				3206D74D1DABD38700F27AB8 /* RecommendCycleView.swift in Sources */,
@@ -583,8 +626,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -629,8 +674,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -649,6 +696,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -658,17 +706,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99A03E915D381BF6CC7821EF /* Pods-DYTV-AlexanderZ-Swift.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MDG236NNW7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "DYTV-AlexanderZ-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SugarAlex.DYTV-AlexanderZ-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -677,17 +729,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A08BA59364DCCB4CFFBFE04B /* Pods-DYTV-AlexanderZ-Swift.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MDG236NNW7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "DYTV-AlexanderZ-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SugarAlex.DYTV-AlexanderZ-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

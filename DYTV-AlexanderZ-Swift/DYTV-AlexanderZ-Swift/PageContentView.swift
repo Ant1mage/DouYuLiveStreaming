@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PageContentViewDelegate : class {
-    func pageContentView(contentView : PageContentView, progress : CGFloat, sourceIndex : Int, targetIndex : Int)
+    func pageContentView(_ contentView : PageContentView, progress : CGFloat, sourceIndex : Int, targetIndex : Int)
 }
 
 private let contentCellID = "contentCellID"
@@ -18,29 +18,29 @@ private let contentCellID = "contentCellID"
 class PageContentView: UIView {
     
     // 定义属性
-    private var childVcs : [UIViewController]
-    private weak var parentViewController : UIViewController?
-    private var startOffsetX : CGFloat = 0
+    fileprivate var childVcs : [UIViewController]
+    fileprivate weak var parentViewController : UIViewController?
+    fileprivate var startOffsetX : CGFloat = 0
     weak var delegate : PageContentViewDelegate?
-    private var isForbidScrollDelegate : Bool = false
+    fileprivate var isForbidScrollDelegate : Bool = false
     
     // 懒加载属性
-    private lazy var collectionView : UICollectionView = {[weak self] in
+    fileprivate lazy var collectionView : UICollectionView = {[weak self] in
 
        let layout = UICollectionViewFlowLayout()
        layout.itemSize = (self?.bounds.size)!
        layout.minimumLineSpacing = 0
        layout.minimumInteritemSpacing = 0
-       layout.scrollDirection = .Horizontal
+       layout.scrollDirection = .horizontal
         
-       let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+       let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
        collectionView.showsHorizontalScrollIndicator = false
-       collectionView.pagingEnabled = true
+       collectionView.isPagingEnabled = true
        collectionView.bounces = false
        collectionView.scrollsToTop = false
        collectionView.dataSource = self
        collectionView.delegate = self
-       collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: contentCellID)
+       collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: contentCellID)
         
        return collectionView
     }()
@@ -65,7 +65,7 @@ class PageContentView: UIView {
 // MARK:- 设置UI
 extension PageContentView {
     
-    private func setupUI() {
+    fileprivate func setupUI() {
 
         for childVC in childVcs {
             parentViewController?.addChildViewController(childVC)
@@ -80,19 +80,19 @@ extension PageContentView {
 
 // MARK:- 遵守UICollectionViewDataSource
 extension PageContentView : UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return childVcs.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(contentCellID, forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellID, for: indexPath)
         
         for view in cell.contentView.subviews {
             view.removeFromSuperview()
         }
         
-        let childVc = childVcs[indexPath.item]
+        let childVc = childVcs[(indexPath as NSIndexPath).item]
         childVc.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(childVc.view)
         
@@ -104,14 +104,14 @@ extension PageContentView : UICollectionViewDataSource {
 // MARK:- 遵守UICollectionViewDelegate
 extension PageContentView : UICollectionViewDelegate {
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
         isForbidScrollDelegate = false
         
         startOffsetX = scrollView.contentOffset.x
     }
     
-    func scrollViewDidScroll(scrollView : UIScrollView){
+    func scrollViewDidScroll(_ scrollView : UIScrollView){
         
         if isForbidScrollDelegate { return }
         
@@ -122,7 +122,7 @@ extension PageContentView : UICollectionViewDelegate {
         // 判断左滑动还是右华东
         let currentOffsetX = scrollView.contentOffset.x
         let scrollViewW = scrollView.bounds.width
-        if currentOffsetX > startOffsetX {
+        if currentOffsetX > currentOffsetX {
             // 左滑动
             progress = currentOffsetX / scrollViewW - floor( currentOffsetX / scrollViewW )
             sourceIndex = Int(currentOffsetX / scrollViewW)
@@ -134,7 +134,7 @@ extension PageContentView : UICollectionViewDelegate {
             }
             
             // 如果完全滑过去
-            if currentOffsetX - startOffsetX == scrollViewW {
+            if currentOffsetX - currentOffsetX == scrollViewW {
                 progress = 1
                 targetIndex = sourceIndex
             }

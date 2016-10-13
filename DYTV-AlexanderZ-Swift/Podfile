@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, ‘8.0’
+platform :ios, ‘9.0’
 
 target 'DYTV-AlexanderZ-Swift' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
@@ -7,6 +7,6 @@ target 'DYTV-AlexanderZ-Swift' do
 
   # Pods for DYTV-AlexanderZ-Swift
 
-pod ‘Alamofire’
-pod ‘Kingfisher’
+pod ‘Alamofire’, ‘~> 4.0.1’
+pod ‘Kingfisher’, ‘~> 3.1.1’
 end

@@ -13,7 +13,7 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addChildViewControllers()
+        addChildVCs()
         
     }
 
@@ -21,14 +21,13 @@ class MainViewController: UITabBarController {
 
 extension MainViewController {
     
-    private func addChildViewControllers() {
+    fileprivate func addChildVCs() {
         
-        tabBar.tintColor = UIColor.orangeColor()
-        
-        addChildViewController(HomeViewController(), title: "首页", imageName: "btn_home_normal", selImg: "btn_home_selected")
-        addChildViewController(LiveViewController(), title: "直播", imageName: "btn_column_normal",selImg: "btn_column_selected")
-        addChildViewController(FollowViewController(), title: "关注", imageName: "btn_live_normal",selImg: "btn_live_selected")
-        addChildViewController(MineViewController(), title: "我的", imageName: "btn_user_normal", selImg: "btn_user_selected")
+        tabBar.tintColor = UIColor.orange
+        addChildViewController(vc: HomeViewController(), title: "首页", imageName: "btn_home_normal", selImg: "btn_home_selected")
+        addChildViewController(vc: LiveViewController(), title: "直播", imageName: "btn_column_normal",selImg: "btn_column_selected")
+        addChildViewController(vc: FollowViewController(), title: "关注", imageName: "btn_live_normal",selImg: "btn_live_selected")
+        addChildViewController(vc: MineViewController(), title: "我的", imageName: "btn_user_normal", selImg: "btn_user_selected")
     }
     
     private func addChildViewController(vc: UIViewController, title: String, imageName: String, selImg:String) {

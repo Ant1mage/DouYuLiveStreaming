@@ -14,17 +14,17 @@ class HomeViewController: UIViewController {
     
     
     // 懒加载属性
-    private lazy var pageTitleView : PageTitleView = {[weak self] in
+    fileprivate lazy var pageTitleView : PageTitleView = {[weak self] in
         
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, title: titles)
-                titleView.backgroundColor = UIColor.whiteColor()
+                titleView.backgroundColor = UIColor.white
         titleView.delegate = self
         return titleView
         }()
     
-    private lazy var pageConteneView : PageContentView = {[weak self] in
+    fileprivate lazy var pageContentView : PageContentView = {[weak self] in
         
         let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabbarH
         let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
@@ -55,7 +55,7 @@ class HomeViewController: UIViewController {
 // MARK:- 设置UI
 extension HomeViewController {
     
-    private func setupUI() {
+    fileprivate func setupUI() {
         
         // 不需要调整内边距
         automaticallyAdjustsScrollViewInsets = false
@@ -63,13 +63,13 @@ extension HomeViewController {
         setNavBar()
         
         view.addSubview(pageTitleView)
-        view.addSubview(pageConteneView)
-        pageConteneView.backgroundColor = UIColor.blueColor()
+        view.addSubview(pageContentView)
+        pageContentView.backgroundColor = UIColor.blue
         
     }
     
     
-    private func setNavBar() {
+    fileprivate func setNavBar() {
         
         // 1.设置左边logo
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo")
@@ -90,16 +90,16 @@ extension HomeViewController : PageTitleViewDelegate {
     
     func pageTitleView(titleView: PageTitleView, selectedIndex: Int) {
         //        print(index)
-        pageConteneView.setCurrentIndex(selectedIndex)
+        pageContentView.setCurrentIndex(currentIndex: selectedIndex)
     }
 }
 
 // MARK:- 遵守PageContentViewDelegate
 extension HomeViewController : PageContentViewDelegate {
     
-    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+    func pageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
         
-        pageTitleView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+        pageTitleView.setTitleWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
     
     
