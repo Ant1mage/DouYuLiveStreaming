@@ -14,11 +14,7 @@ class RecommendGameView: UIView {
     
     var groups : [BaseGameModel]? {
         didSet {
-            groups?.removeFirst()
-            groups?.removeFirst()
-            let addGroup = AnchorGroupModel()
-            addGroup.tag_name = "更多"
-            groups?.append(addGroup)
+            
             collectionView.reloadData()
         }
     }

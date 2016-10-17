@@ -12,7 +12,7 @@ private let kCycleViewH = kScreenW * 3 / 7
 private let kGameViewH : CGFloat = 90
 
 class RecommendViewController: BaseAnchorViewController {
-    
+
     fileprivate lazy var recommendViewModel : RecommendViewModel = RecommendViewModel()
     fileprivate lazy var cycleView : RecommendCycleView = {
         let cycleView = RecommendCycleView.recommendCycleView()
@@ -24,6 +24,7 @@ class RecommendViewController: BaseAnchorViewController {
         gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
         return gameView
     }()
+    
 }
 
 
@@ -40,8 +41,12 @@ extension RecommendViewController {
             
             self.collectionView.reloadData()
             
-            let groups = self.recommendViewModel.anchorGroups
-            
+            var groups = self.recommendViewModel.anchorGroups
+            groups.removeFirst()
+            groups.removeFirst()
+            let addGroup = AnchorGroupModel()
+            addGroup.tag_name = "更多"
+            groups.append(addGroup)
             self.gameView.groups = groups
             
         }
@@ -52,10 +57,7 @@ extension RecommendViewController {
         }
         
     }
-    
-    
 }
-
 
 // MARK:- 设置UI
 extension RecommendViewController {
@@ -65,7 +67,6 @@ extension RecommendViewController {
         view.addSubview(collectionView)
         collectionView.addSubview(cycleView)
         collectionView.addSubview(gameView)
-        
         // 设置collectionView内边距
         collectionView.contentInset = UIEdgeInsets(top: (kCycleViewH + kGameViewH), left: 0, bottom: 0, right: 0)
         

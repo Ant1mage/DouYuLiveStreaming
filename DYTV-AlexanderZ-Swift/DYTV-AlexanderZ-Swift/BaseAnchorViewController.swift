@@ -24,7 +24,7 @@ class BaseAnchorViewController: UIViewController {
     // MARK: 定义属性
     var baseViewModel : BaseViewModel!
     lazy var collectionView : UICollectionView = {[unowned self] in
-        // 创建布局
+        
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kNormalItemW, height: kNormalItemH)
         layout.minimumLineSpacing = 0
@@ -32,7 +32,7 @@ class BaseAnchorViewController: UIViewController {
         layout.headerReferenceSize = CGSize(width: kScreenW, height: kHeaderViewH)
         layout.sectionInset = UIEdgeInsets(top: 0, left: kItemMargin, bottom: 0, right: kItemMargin)
         
-        // UICollectionView
+        
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
@@ -70,7 +70,7 @@ extension BaseAnchorViewController {
 }
 
 
-// MARK:- 遵守UICollectionViewDataSource / Delegate
+// MARK:- 遵守UICollectionView的DataSource & Delegate
 extension BaseAnchorViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return baseViewModel.anchorGroups.count
@@ -81,19 +81,20 @@ extension BaseAnchorViewController : UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        // 1.取出Cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
         
-        
+        // 2.给cell设置数据
         cell.anchor = baseViewModel.anchorGroups[indexPath.section].anchors[indexPath.item]
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
+        // 1.取出HeaderView
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
         
+        // 2.给HeaderView设置数据
         headerView.group = baseViewModel.anchorGroups[indexPath.section]
         
         return headerView
