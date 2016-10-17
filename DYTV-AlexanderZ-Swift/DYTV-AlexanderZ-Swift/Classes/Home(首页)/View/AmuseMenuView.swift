@@ -58,12 +58,12 @@ extension AmuseMenuView : UICollectionViewDataSource {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kMenuCellID, for: indexPath) as! AmuseMenuViewCell
         
-        setupCellDataWithCell(cell: cell, indexPath: indexPath)
+        setupCellDataWithCell(cell, indexPath: indexPath)
         
         return cell
     }
     
-    private func setupCellDataWithCell(cell : AmuseMenuViewCell, indexPath : IndexPath) {
+    fileprivate func setupCellDataWithCell(_ cell : AmuseMenuViewCell, indexPath : IndexPath) {
         // 0页: 0 ~ 7
         // 1页: 8 ~ 15
         // 2页: 16 ~ 23

@@ -21,16 +21,16 @@ class RecommendViewModel : BaseViewModel {
 extension RecommendViewModel {
     
     // 请求推荐数据
-    func requestData(finishCallback : @escaping () -> ()) {
+    func requestData(_ finishCallback : @escaping () -> ()) {
         
-        let parameters = ["limit" : "4", "offset" : "0", "time" : NSDate.getCurrentTime()]
+        let parameters = ["limit" : "4", "offset" : "0", "time" : Date.getCurrentTime()]
         
         // 创建组
         let axGroup = DispatchGroup()
         
         // 推荐数据
         axGroup.enter()
-        NetworkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time" : NSDate.getCurrentTime()]) { (result) in
+        NetworkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
             // 数据转字典
             guard let resultDict = result as? [String : NSObject] else { return }
             
@@ -89,7 +89,7 @@ extension RecommendViewModel {
     }
     
     // 无限轮播数据
-    func requestCycleData(finishCallback : @escaping () -> ()) {
+    func requestCycleData(_ finishCallback : @escaping () -> ()) {
         NetworkTools.requestData(.get, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["Version" : "2.300"]) { (result) in
             
             guard let resultDict = result as? [String : NSObject] else { return }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PageContentViewDelegate : class {
-    func pageContentView(_ contentView : PageContentView, progress : CGFloat, sourceIndex : Int, targetIndex : Int)
+    func pageContentView(contentView : PageContentView, progress : CGFloat, sourceIndex : Int, targetIndex : Int)
 }
 
 private let contentCellID = "contentCellID"
@@ -151,7 +151,7 @@ extension PageContentView : UICollectionViewDelegate {
         
         // 将3个数据传给titleView
         print("pro:\(progress),souce:\(sourceIndex),tar:\(targetIndex)")
-        delegate?.pageContentView(self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+        delegate?.pageContentView(contentView: self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
     
     
@@ -160,7 +160,7 @@ extension PageContentView : UICollectionViewDelegate {
 // MARK:- 与pageTitleView的逻辑处理
 extension PageContentView {
     
-    func setCurrentIndex(currentIndex : Int) {
+    func setCurrentIndex(_ currentIndex : Int) {
         
         isForbidScrollDelegate = true
         

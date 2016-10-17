@@ -18,7 +18,7 @@ class GameDetailViewModel  {
 
 extension GameDetailViewModel {
     
-    func loadData(finishedCallback : @escaping () -> ()) {
+    func loadData(_ finishedCallback : @escaping () -> ()) {
         
         let URLString = "http://capi.douyucdn.cn/api/v1/getColumnDetail"
         

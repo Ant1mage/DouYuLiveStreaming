@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PageTitleViewDelegate : class {
-    func pageTitleView(titleView : PageTitleView, selectedIndex : Int)
+    func pageTitleView(_ titleView : PageTitleView, selectedIndex index : Int)
 }
 
 private let kScrollLineH : CGFloat = 2
@@ -96,7 +96,8 @@ extension PageTitleView {
             
             // 给label添加手势
             label.isUserInteractionEnabled = true
-            let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.titleLabelClick(_:)))
+            let tapGes = UITapGestureRecognizer(target: self, action:
+                #selector(PageTitleView.titleLabelClick))
             label.addGestureRecognizer(tapGes)
             
         }
@@ -122,7 +123,7 @@ extension PageTitleView {
 
 // MARK:- 监听label的点击事件
 extension PageTitleView {
-    @objc fileprivate func titleLabelClick(_ tapGes : UITapGestureRecognizer) {
+    @objc fileprivate func titleLabelClick(tapGes : UITapGestureRecognizer) {
         
         guard let currentLabel = tapGes.view as? UILabel else { return }
         
@@ -143,14 +144,13 @@ extension PageTitleView {
             self.scrollLine.frame.origin.x = scrollLineX
         })
         
-        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
+        delegate?.pageTitleView(self, selectedIndex: currentIndex)
     }
 }
 
 
 extension PageTitleView {
-    func setTitleWithProgress(progress : CGFloat, sourceIndex : Int, targetIndex : Int){
-        
+    func setTitleWithProgress(_ progress : CGFloat, sourceIndex : Int, targetIndex : Int){
         
         let sourceLabel = titleLabels[sourceIndex]
         let targetLabel = titleLabels[targetIndex]

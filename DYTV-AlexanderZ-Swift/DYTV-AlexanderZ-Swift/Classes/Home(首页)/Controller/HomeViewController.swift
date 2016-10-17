@@ -84,19 +84,15 @@ extension HomeViewController {
 
 // MARK:- 遵守PageTitleViewDelegate
 extension HomeViewController : PageTitleViewDelegate {
-    
-    func pageTitleView(titleView: PageTitleView, selectedIndex: Int) {
-        pageContentView.setCurrentIndex(currentIndex: selectedIndex)
+    func pageTitleView(_ titleView: PageTitleView, selectedIndex index: Int) {
+        pageContentView.setCurrentIndex(index)
     }
 }
 
 // MARK:- 遵守PageContentViewDelegate
 extension HomeViewController : PageContentViewDelegate {
     
-    func pageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
-        
-        pageTitleView.setTitleWithProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
-    
-    
 }
