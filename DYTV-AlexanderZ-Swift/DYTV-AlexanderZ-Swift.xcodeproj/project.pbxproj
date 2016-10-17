@@ -55,6 +55,9 @@
 		32845C6F1DB5369400F74AA5 /* AmuseMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32845C6B1DB5369400F74AA5 /* AmuseMenuView.xib */; };
 		32845C701DB5369400F74AA5 /* AmuseMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845C6C1DB5369400F74AA5 /* AmuseMenuViewCell.swift */; };
 		32845C711DB5369400F74AA5 /* AmuseMenuViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32845C6D1DB5369400F74AA5 /* AmuseMenuViewCell.xib */; };
+		32845C731DB5393F00F74AA5 /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845C721DB5393F00F74AA5 /* FunnyViewController.swift */; };
+		32845C751DB5395300F74AA5 /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845C741DB5395300F74AA5 /* FunnyViewModel.swift */; };
+		32845C771DB53B0D00F74AA5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32845C761DB53B0D00F74AA5 /* BaseViewController.swift */; };
 		EC3E7E8B125099B66EBB2026 /* Pods_DYTV_AlexanderZ_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF451FECC04AD9FA861A8E /* Pods_DYTV_AlexanderZ_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +112,9 @@
 		32845C6B1DB5369400F74AA5 /* AmuseMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmuseMenuView.xib; sourceTree = "<group>"; };
 		32845C6C1DB5369400F74AA5 /* AmuseMenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseMenuViewCell.swift; sourceTree = "<group>"; };
 		32845C6D1DB5369400F74AA5 /* AmuseMenuViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmuseMenuViewCell.xib; sourceTree = "<group>"; };
+		32845C721DB5393F00F74AA5 /* FunnyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
+		32845C741DB5395300F74AA5 /* FunnyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
+		32845C761DB53B0D00F74AA5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		94EF451FECC04AD9FA861A8E /* Pods_DYTV_AlexanderZ_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYTV_AlexanderZ_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A03E915D381BF6CC7821EF /* Pods-DYTV-AlexanderZ-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV-AlexanderZ-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV-AlexanderZ-Swift/Pods-DYTV-AlexanderZ-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		A08BA59364DCCB4CFFBFE04B /* Pods-DYTV-AlexanderZ-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV-AlexanderZ-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV-AlexanderZ-Swift/Pods-DYTV-AlexanderZ-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -317,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				324D7E121D95264B000087EC /* MainViewController.swift */,
+				32845C761DB53B0D00F74AA5 /* BaseViewController.swift */,
 				3235C4E61DB011FE00C9E873 /* BaseAnchorViewController.swift */,
 			);
 			name = Controller;
@@ -359,6 +366,7 @@
 				324D7E361D98608F000087EC /* RecommendViewController.swift */,
 				3231A2A01DB510E6003F94F9 /* GameViewController.swift */,
 				32845C661DB5323000F74AA5 /* AmuseViewController.swift */,
+				32845C721DB5393F00F74AA5 /* FunnyViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -369,6 +377,7 @@
 				324D7E581D9D8E06000087EC /* RecommendViewModel.swift */,
 				3231A2A21DB517F3003F94F9 /* GameDetailViewModel.swift */,
 				32845C681DB5368600F74AA5 /* AmuseViewModel.swift */,
+				32845C741DB5395300F74AA5 /* FunnyViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -591,9 +600,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				327DC33A1DB0020100DAB0DC /* CollectionGameViewCell.swift in Sources */,
+				32845C731DB5393F00F74AA5 /* FunnyViewController.swift in Sources */,
 				324D7E2D1D95353C000087EC /* Common.swift in Sources */,
 				324D7E561D9D8DFA000087EC /* AnchorGroupModel.swift in Sources */,
 				324D7DF51D95230D000087EC /* AppDelegate.swift in Sources */,
+				32845C771DB53B0D00F74AA5 /* BaseViewController.swift in Sources */,
 				3235C4E71DB011FE00C9E873 /* BaseAnchorViewController.swift in Sources */,
 				32845C6E1DB5369400F74AA5 /* AmuseMenuView.swift in Sources */,
 				324D7E331D95A430000087EC /* PageContentView.swift in Sources */,
@@ -617,6 +628,7 @@
 				3231A2A31DB517F3003F94F9 /* GameDetailViewModel.swift in Sources */,
 				324D7E2F1D953E17000087EC /* PageTitleView.swift in Sources */,
 				327DC3331DAFFA6800DAB0DC /* RecommendGameView.swift in Sources */,
+				32845C751DB5395300F74AA5 /* FunnyViewModel.swift in Sources */,
 				3231A2A11DB510E6003F94F9 /* GameViewController.swift in Sources */,
 				324D7E221D952848000087EC /* HomeViewController.swift in Sources */,
 				3235C4E31DB010DF00C9E873 /* BaseViewModel.swift in Sources */,

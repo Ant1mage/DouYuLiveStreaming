@@ -1,9 +1,9 @@
 //
 //  AmuseMenuView.swift
-//  DYZB
+//  DYTV-AlexanderZ-Swift
 //
-//  Created by 1 on 16/10/11.
-//  Copyright © 2016年 小码哥. All rights reserved.
+//  Created by Alexander Zou on 2016/10/17.
+//  Copyright © 2016年 Alexander Zou. All rights reserved.
 //
 
 import UIKit
@@ -11,18 +11,17 @@ import UIKit
 private let kMenuCellID = "kMenuCellID"
 
 class AmuseMenuView: UIView {
-    // MARK: 定义属性
+
     var groups : [AnchorGroupModel]? {
         didSet {
             collectionView.reloadData()
         }
     }
     
-    // MARK: 控件属性
+
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    // MARK: 从Xib中加载出来
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -56,10 +55,9 @@ extension AmuseMenuView : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 1.取出cell
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kMenuCellID, for: indexPath) as! AmuseMenuViewCell
         
-        // 2.给cell设置数据
         setupCellDataWithCell(cell: cell, indexPath: indexPath)
         
         return cell
@@ -68,17 +66,16 @@ extension AmuseMenuView : UICollectionViewDataSource {
     private func setupCellDataWithCell(cell : AmuseMenuViewCell, indexPath : IndexPath) {
         // 0页: 0 ~ 7
         // 1页: 8 ~ 15
-        // 2也: 16 ~ 23
-        // 1.取出起始位置&终点位置
+        // 2页: 16 ~ 23
+        // 取出起始位置&终点位置
         let startIndex = indexPath.item * 8
         var endIndex = (indexPath.item + 1) * 8 - 1
         
-        // 2.判断越界问题
+        // 判断越界问题
         if endIndex > groups!.count - 1 {
             endIndex = groups!.count - 1
         }
         
-        // 3.取出数据,并且赋值给cell
         cell.groups = Array(groups![startIndex...endIndex])
     }
 }

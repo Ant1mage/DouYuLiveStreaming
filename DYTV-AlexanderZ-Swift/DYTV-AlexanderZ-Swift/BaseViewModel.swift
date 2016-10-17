@@ -14,14 +14,27 @@ class BaseViewModel {
 
 
 extension BaseViewModel {
-    func loadAnchorData(URLString : String, parameters : [String : Any]? = nil, finishedCallback : @escaping () -> ()) {
+    func loadAnchorData(isGroupData : Bool, URLString : String, parameters : [String : Any]? = nil, finishedCallback : @escaping () -> ()) {
         NetworkTools.requestData(.get, URLString: URLString, parameters: parameters) { (result) in
             
             guard let resultDict = result as? [String : Any] else { return }
             guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
             
-            for dict in dataArray {
-                self.anchorGroups.append(AnchorGroupModel(dict: dict))
+            
+            if isGroupData {
+                
+                for dict in dataArray {
+                    self.anchorGroups.append(AnchorGroupModel(dict: dict))
+                }
+            } else  {
+                
+                let group = AnchorGroupModel()
+                
+                for dict in dataArray {
+                    group.anchors.append(AnchorModel(dict: dict as! [String : NSObject]))
+                }
+                
+                self.anchorGroups.append(group)
             }
             
             finishedCallback()
