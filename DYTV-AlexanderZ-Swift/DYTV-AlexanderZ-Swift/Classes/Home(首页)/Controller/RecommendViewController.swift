@@ -64,8 +64,7 @@ extension RecommendViewController {
 extension RecommendViewController {
     
     override func setupUI() {
-        
-        view.addSubview(collectionView)
+        super.setupUI()
         collectionView.addSubview(cycleView)
         collectionView.addSubview(gameView)
         // 设置collectionView内边距
@@ -96,7 +95,7 @@ extension RecommendViewController : UICollectionViewDelegateFlowLayout {
     
 //    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 //        
-//        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+//        let cell = collectionView.cellForItemAtIndexPath(indexPath as IndexPath)
 //        
 //        cell?.backgroundColor = UIColor.blueColor()
 //        

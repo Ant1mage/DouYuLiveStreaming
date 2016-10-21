@@ -59,7 +59,10 @@ class BaseAnchorViewController: BaseViewController {
 // MARK:- 设置UI界面
 extension BaseAnchorViewController {
     override func setupUI() {
+        
+        contentView = collectionView
         view.addSubview(collectionView)
+        super.setupUI()
     }
 }
 

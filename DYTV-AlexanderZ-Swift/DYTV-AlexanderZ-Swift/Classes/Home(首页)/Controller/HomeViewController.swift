@@ -12,7 +12,6 @@ private let kTitleViewH : CGFloat = 40
 
 class HomeViewController: UIViewController {
     
-    
     // 懒加载属性
     fileprivate lazy var pageTitleView : PageTitleView = {[weak self] in
         
