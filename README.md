@@ -1,6 +1,6 @@
 # DouYuLiveStreaming
 ### Swift3.0仿写斗鱼TV,下载运行不了得麻烦您更新Xcode8<br>
-### An exercise project for DYTV with Swift3.0(Live Streaming Platfrom from China),if you can not run this project,please update your Xcode to version 8.0 <br>
+### An exercise project for DYTV with Swift3.0 (A Live Streaming Platfrom from China) ,if you can not run this project,please update your Xcode to version 8.0 <br>
 ### 更新日志(Update Log):<br>
 -----------------------------------------------------------  
 #### 10.21.16 :  <br>
