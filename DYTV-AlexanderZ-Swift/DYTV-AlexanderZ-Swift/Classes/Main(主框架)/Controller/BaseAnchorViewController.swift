@@ -13,8 +13,8 @@ private let kHeaderViewH : CGFloat = 50
 
 private let kNormalCellID = "kNormalCellID"
 private let kHeaderViewID = "kHeaderViewID"
-
 let kPrettyCellID = "kPrettyCellID"
+
 let kNormalItemW = (kScreenW - 3 * kItemMargin) / 2
 let kNormalItemH = kNormalItemW * 3 / 4
 let kPrettyItemH = kNormalItemW * 4 / 3
@@ -84,20 +84,18 @@ extension BaseAnchorViewController : UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 1.取出Cell
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
         
-        // 2.给cell设置数据
         cell.anchor = baseViewModel.anchorGroups[indexPath.section].anchors[indexPath.item]
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        // 1.取出HeaderView
+
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
         
-        // 2.给HeaderView设置数据
         headerView.group = baseViewModel.anchorGroups[indexPath.section]
         
         return headerView

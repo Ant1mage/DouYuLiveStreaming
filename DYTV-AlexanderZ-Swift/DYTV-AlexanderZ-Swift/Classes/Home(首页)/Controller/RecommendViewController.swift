@@ -14,11 +14,13 @@ private let kGameViewH : CGFloat = 90
 class RecommendViewController: BaseAnchorViewController {
 
     fileprivate lazy var recommendViewModel : RecommendViewModel = RecommendViewModel()
+    
     fileprivate lazy var cycleView : RecommendCycleView = {
         let cycleView = RecommendCycleView.recommendCycleView()
         cycleView.frame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenW, height: kCycleViewH)
         return cycleView
     }()
+    
     fileprivate lazy var gameView : RecommendGameView = {
         let gameView = RecommendGameView.recommendGameView()
         gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
@@ -42,12 +44,16 @@ extension RecommendViewController {
             self.collectionView.reloadData()
             
             var groups = self.recommendViewModel.anchorGroups
+            
             groups.removeFirst()
             groups.removeFirst()
+            
             let addGroup = AnchorGroupModel()
             addGroup.tag_name = "更多"
             groups.append(addGroup)
+            
             self.gameView.groups = groups
+            
             self.loadDataFinished()
             
         }

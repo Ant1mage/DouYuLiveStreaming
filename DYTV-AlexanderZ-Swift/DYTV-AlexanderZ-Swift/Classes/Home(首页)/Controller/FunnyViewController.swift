@@ -11,7 +11,7 @@ import UIKit
 private let kTopMargin : CGFloat = 8
 
 class FunnyViewController: BaseAnchorViewController {
-    // MARK: 懒加载ViewModel对象
+    
     fileprivate lazy var funnyViewModel : FunnyViewModel = FunnyViewModel()
 }
 
@@ -29,7 +29,7 @@ extension FunnyViewController {
 
 extension FunnyViewController {
     override func loadData() {
-
+        
         baseViewModel = funnyViewModel
         
         funnyViewModel.loadFunnyData {
@@ -37,6 +37,8 @@ extension FunnyViewController {
             self.collectionView.reloadData()
             
             self.loadDataFinished()
+            
         }
     }
 }
+

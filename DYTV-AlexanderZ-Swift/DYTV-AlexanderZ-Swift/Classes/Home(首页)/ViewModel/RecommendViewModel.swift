@@ -73,7 +73,6 @@ extension RecommendViewModel {
         }
         
         
-        
         // 游戏数据
         axGroup.enter()
         loadAnchorData(isGroupData: true, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) {

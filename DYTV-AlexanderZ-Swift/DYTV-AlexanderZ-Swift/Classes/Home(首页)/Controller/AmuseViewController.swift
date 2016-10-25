@@ -13,6 +13,7 @@ private let kMenuViewH : CGFloat = 200
 class AmuseViewController: BaseAnchorViewController {
     
     fileprivate lazy var amuseViewModel : AmuseViewModel = AmuseViewModel()
+    
     fileprivate lazy var menuView : AmuseMenuView = {
         let menuView = AmuseMenuView.amuseMenuView()
         menuView.frame = CGRect(x: 0, y: -kMenuViewH, width: kScreenW, height: kMenuViewH)
@@ -42,6 +43,8 @@ extension AmuseViewController {
             var tempGroups = self.amuseViewModel.anchorGroups
             tempGroups.removeFirst()
             self.menuView.groups = tempGroups
+            
+            self.loadDataFinished()
         }
     }
 }
