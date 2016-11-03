@@ -5,10 +5,12 @@
 -----------------------------------------------------------  
 #### 11.2.16: <br>
 /*<br>
+> // TODO:<br>
+  1.将直播加入到该项目中
+
 >// 更新进度(Update progress):<br>
-  1.直播功能完成(包括手机端采集,编码,推流,解码,拉流)<br>
+  1.直播功能完成(包括手机端采集,编码,推流,拉流,解码,播放)<br>
   2.具体请看我的另外一个repositories >>> LiveStreamingDemo(https://github.com/CallMeMrAlex/LiveStreamingDemo)<br>
->
 
   
 */<br>
