@@ -3,6 +3,17 @@
 ## An exercise project for DYTV with Swift 3.0 (A Live Streaming Platfrom from China) ,if you can not run this project,please update your Xcode to version 8.0 <br>
 ### 更新日志(Update Log):<br>
 -----------------------------------------------------------  
+#### 11.2.16: <br>
+/*<br>
+>// 更新进度(Update progress):<br>
+  1.直播功能完成(包括手机端采集,编码,推流,解码,拉流)<br>
+  2.具体请看我的另外一个repositories >>> LiveStreamingDemo(https://github.com/CallMeMrAlex/LiveStreamingDemo)<br>
+>
+
+  
+*/<br>
+<br>
+<br>
 #### 10.21.16 :  <br>
 /*<br>
 >// TODO:<br>
