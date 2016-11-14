@@ -58,6 +58,9 @@
 		32567F8F1DB5769C009874EF /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32567F5F1DB5769C009874EF /* UIBarButtonItem+Extension.swift */; };
 		32567F901DB5769C009874EF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32567F601DB5769C009874EF /* UIColor+Extension.swift */; };
 		32567F911DB5769C009874EF /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32567F611DB5769C009874EF /* NetworkTools.swift */; };
+		329EB9581DD9FC6C00CDD3F2 /* RoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EB9571DD9FC6C00CDD3F2 /* RoomShowViewController.swift */; };
+		329EB95A1DD9FC9500CDD3F2 /* RoomNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EB9591DD9FC9500CDD3F2 /* RoomNormalViewController.swift */; };
+		329EB95E1DDA258500CDD3F2 /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329EB95D1DDA258500CDD3F2 /* CustomNavViewController.swift */; };
 		EC3E7E8B125099B66EBB2026 /* Pods_DYTV_AlexanderZ_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94EF451FECC04AD9FA861A8E /* Pods_DYTV_AlexanderZ_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +118,9 @@
 		32567F5F1DB5769C009874EF /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		32567F601DB5769C009874EF /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		32567F611DB5769C009874EF /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		329EB9571DD9FC6C00CDD3F2 /* RoomShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomShowViewController.swift; sourceTree = "<group>"; };
+		329EB9591DD9FC9500CDD3F2 /* RoomNormalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomNormalViewController.swift; sourceTree = "<group>"; };
+		329EB95D1DDA258500CDD3F2 /* CustomNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
 		94EF451FECC04AD9FA861A8E /* Pods_DYTV_AlexanderZ_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYTV_AlexanderZ_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A03E915D381BF6CC7821EF /* Pods-DYTV-AlexanderZ-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV-AlexanderZ-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV-AlexanderZ-Swift/Pods-DYTV-AlexanderZ-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		A08BA59364DCCB4CFFBFE04B /* Pods-DYTV-AlexanderZ-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYTV-AlexanderZ-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYTV-AlexanderZ-Swift/Pods-DYTV-AlexanderZ-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				32567F421DB5769C009874EF /* Main(主框架) */,
+				329EB9531DD9FC4E00CDD3F2 /* Room(房间) */,
 				32567F181DB5769C009874EF /* Home(首页) */,
 				32567F121DB5769C009874EF /* Follow(关注) */,
 				32567F361DB5769C009874EF /* Live(直播) */,
@@ -386,6 +393,7 @@
 				32567F441DB5769C009874EF /* BaseAnchorViewController.swift */,
 				32567F451DB5769C009874EF /* BaseViewController.swift */,
 				32567F461DB5769C009874EF /* MainViewController.swift */,
+				329EB95D1DDA258500CDD3F2 /* CustomNavViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -480,6 +488,39 @@
 				32567F601DB5769C009874EF /* UIColor+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		329EB9531DD9FC4E00CDD3F2 /* Room(房间) */ = {
+			isa = PBXGroup;
+			children = (
+				329EB9541DD9FC4E00CDD3F2 /* Controller */,
+				329EB9551DD9FC4E00CDD3F2 /* Model */,
+				329EB9561DD9FC4E00CDD3F2 /* View */,
+			);
+			path = "Room(房间)";
+			sourceTree = "<group>";
+		};
+		329EB9541DD9FC4E00CDD3F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				329EB9571DD9FC6C00CDD3F2 /* RoomShowViewController.swift */,
+				329EB9591DD9FC9500CDD3F2 /* RoomNormalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		329EB9551DD9FC4E00CDD3F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		329EB9561DD9FC4E00CDD3F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E9AED66782DA0BBBCAC2EBAE /* Frameworks */ = {
@@ -645,9 +686,11 @@
 				32567F6A1DB5769C009874EF /* AmuseMenuView.swift in Sources */,
 				32567F8B1DB5769C009874EF /* BaseViewModel.swift in Sources */,
 				32567F6E1DB5769C009874EF /* CollectionCycleCell.swift in Sources */,
+				329EB9581DD9FC6C00CDD3F2 /* RoomShowViewController.swift in Sources */,
 				32567F801DB5769C009874EF /* MainViewController.swift in Sources */,
 				32567F701DB5769C009874EF /* CollectionGameViewCell.swift in Sources */,
 				32567F641DB5769C009874EF /* FunnyViewController.swift in Sources */,
+				329EB95A1DD9FC9500CDD3F2 /* RoomNormalViewController.swift in Sources */,
 				32567F8C1DB5769C009874EF /* MineViewController.swift in Sources */,
 				32567F7B1DB5769C009874EF /* RecommendViewModel.swift in Sources */,
 				32567F791DB5769C009874EF /* FunnyViewModel.swift in Sources */,
@@ -655,6 +698,7 @@
 				32567F7C1DB5769C009874EF /* LiveViewController.swift in Sources */,
 				32567F8E1DB5769C009874EF /* NSDate + Extension.swift in Sources */,
 				32567F721DB5769C009874EF /* CollectionHeaderView.swift in Sources */,
+				329EB95E1DDA258500CDD3F2 /* CustomNavViewController.swift in Sources */,
 				32567F911DB5769C009874EF /* NetworkTools.swift in Sources */,
 				32567F8F1DB5769C009874EF /* UIBarButtonItem+Extension.swift in Sources */,
 				32567F661DB5769C009874EF /* HomeViewController.swift in Sources */,

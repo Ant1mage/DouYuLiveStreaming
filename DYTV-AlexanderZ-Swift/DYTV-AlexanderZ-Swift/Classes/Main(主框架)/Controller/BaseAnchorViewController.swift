@@ -74,7 +74,7 @@ extension BaseAnchorViewController {
 
 
 // MARK:- 遵守UICollectionView的DataSource & Delegate
-extension BaseAnchorViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+extension BaseAnchorViewController : UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return baseViewModel.anchorGroups.count
     }
@@ -100,4 +100,31 @@ extension BaseAnchorViewController : UICollectionViewDataSource, UICollectionVie
         
         return headerView
     }
+}
+
+
+// MARK:- 遵守UICollectionViewDelegate
+extension BaseAnchorViewController : UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let anchor = baseViewModel.anchorGroups[indexPath.section].anchors[indexPath.item]
+        anchor.isVertical == 0 ? pushNormalRoom() : pushShowRoom()
+    }
+    
+    private func pushShowRoom() {
+        
+        let showRoomVC = RoomShowViewController()
+        present(showRoomVC, animated: true, completion: nil)
+    }
+    
+    private func pushNormalRoom() {
+        
+        let normalRoomVC = RoomNormalViewController()
+        normalRoomVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(normalRoomVC, animated: true)
+    }
+    
+    
+    
 }

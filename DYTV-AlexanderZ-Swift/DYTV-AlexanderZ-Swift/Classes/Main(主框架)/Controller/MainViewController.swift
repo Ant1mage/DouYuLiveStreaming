@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,10 +40,9 @@ extension MainViewController {
         vc.tabBarItem.selectedImage = UIImage(named: selImg)
         
         // 导航控制器
-        let nav = UINavigationController(rootViewController: vc)
+        let nav = CustomNavViewController(rootViewController: vc)
         addChildViewController(nav)
         
     }
-    
     
 }
